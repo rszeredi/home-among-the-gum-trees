@@ -1,4 +1,4 @@
-import { GoogleMap } from '@react-google-maps/api';
+import { GoogleMap, Marker } from '@react-google-maps/api';
 import React from 'react';
 
 const containerStyle = {
@@ -11,10 +11,13 @@ const center = {
 	lng: 144.96
 };
 
-function Map() {
+function Map({ selectedAddress }) {
+	console.log('selectedAddress', selectedAddress);
 	return (
 		<div>
-			<GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12} />
+			<GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
+				{selectedAddress && <Marker position={selectedAddress} />}
+			</GoogleMap>
 		</div>
 	);
 }
