@@ -1,0 +1,34 @@
+export const parseNearbySearchResults = (results) => {
+	return results.map((res) => {
+		const {
+			name,
+			rating,
+			types,
+			business_status,
+			price_level,
+			user_ratings_total,
+			vicinity,
+			place_id,
+			photos,
+			icon,
+			icon_mask_base_uri
+		} = res;
+		const photo = photos ? photos[0].getUrl() : null;
+		const url = `https://www.google.com/maps/place/?q=place_id:${place_id}`;
+		const iconNonColored = `${icon_mask_base_uri}.svg`;
+		return {
+			name,
+			place_id,
+			types,
+			business_status,
+			vicinity,
+			rating,
+			price_level,
+			user_ratings_total,
+			photo,
+			icon,
+			iconNonColored,
+			url
+		};
+	});
+};

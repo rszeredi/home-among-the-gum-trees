@@ -1,0 +1,55 @@
+[
+	{
+		"name": "Le Croissant",
+		"place_id": "ChIJD2rKorlB1moR5ZWspOmffYQ",
+		"types": [ "bakery", "food", "point_of_interest", "store", "establishment" ],
+		"business_status": "OPERATIONAL",
+		"vicinity": "1204 Toorak Road, Camberwell",
+		"rating": 4.2,
+		"price_level": 2,
+		"user_ratings_total": 102,
+		"photo": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uEAThT5UEmi1fuyuADUusLk__0e-M45eYzgScajR4dLlstsb0UiCN3uL4mNw225HckhZ0iaf7pG_ZK3TE5P_M2H6pZ8wSaIBmUEd0Fa-jMjmh_lNHiIKtlhpweZ-6gUPqenhJvzO4vQG3-sJbFT0LzoDGA9a2ipn9xtntJYZ6YzstYkJ&3u4032&5m1&2e1&callback=none&token=127506",
+		"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+		"iconNonColored": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet.svg",
+		"url": "https://www.google.com/maps/place/?q=place_id:ChIJD2rKorlB1moR5ZWspOmffYQ"
+	},
+	{
+		"name": "Cake Tin Melbourne",
+		"place_id": "ChIJ7WUQjwRB1moR9R0aQbibOOY",
+		"types": [ "bakery", "food", "point_of_interest", "store", "establishment" ],
+		"business_status": "OPERATIONAL",
+		"vicinity": "1256 Toorak Road, Camberwell",
+		"rating": 4,
+		"user_ratings_total": 2,
+		"photo": null,
+		"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+		"iconNonColored": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet.svg",
+		"url": "https://www.google.com/maps/place/?q=place_id:ChIJ7WUQjwRB1moR9R0aQbibOOY"
+	},
+	{
+		"name": "Wild Dough Bakery",
+		"place_id": "ChIJ5e2C_odB1moRtrCY97aD7X8",
+		"types": [ "bakery", "food", "point_of_interest", "store", "establishment" ],
+		"business_status": "OPERATIONAL",
+		"vicinity": "3/1407 Toorak Road, Camberwell",
+		"rating": 4.5,
+		"user_ratings_total": 20,
+		"photo": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uEChm2SDFyErU8yFV8WaJLtYC2I82Kx34sIaDIPGHVLEyIJnSUNDpyynbM8EqZSSrzpWDYPdyJKuN3VfWj7gPHueMYoGJ2fs77o_YKg85XJfYHZf4Qh8RWcEwYOgUTedqsiO_1Nx6FRoki4NTsEsAxUFcys41voEpRyz9y85sPxBgC9-&3u3264&5m1&2e1&callback=none&token=42088",
+		"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+		"iconNonColored": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet.svg",
+		"url": "https://www.google.com/maps/place/?q=place_id:ChIJ5e2C_odB1moRtrCY97aD7X8"
+	},
+	{
+		"name": "Cake & Pie Shop The",
+		"place_id": "ChIJW4RQOblB1moRt79-XcFNIGU",
+		"types": [ "bakery", "food", "point_of_interest", "store", "establishment" ],
+		"business_status": "OPERATIONAL",
+		"vicinity": "1165 Toorak Road, Camberwell",
+		"rating": 3.7,
+		"user_ratings_total": 15,
+		"photo": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uEBpRzO-R0yqoxSVAsVilKXAArNlBzx5yj1j4vy6xAnQiJY5VY13MKbjHLNgu7OLg5D_aUaiWZRBqiFOzJo-PvHExJcK1L2gKfvfBsIJIWrEfWVZ0x4EENalRK-t38x8SWKY1r5HLNJc0dbAYFOQpxo4eQ8dWitvWkBSFqCTsAGAbq84&3u3024&5m1&2e1&callback=none&token=63455",
+		"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+		"iconNonColored": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet.svg",
+		"url": "https://www.google.com/maps/place/?q=place_id:ChIJW4RQOblB1moRt79-XcFNIGU"
+	}
+]
