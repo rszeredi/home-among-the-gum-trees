@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useLoadScript } from '@react-google-maps/api';
 import SearchBar from './SearchBar';
 import Map from './Map';
+import Dashboard from './Dashboard';
+
+import './MainApp.css';
 
 const mapsLibraries = [ 'places' ];
 
@@ -12,11 +15,18 @@ function MainApp() {
 	});
 
 	const [ selectedAddress, setSelectedAddress ] = useState(null);
+	const [ placesOfInterest, setPlacesOfInterest ] = useState(null);
+	console.log('selectedAddress', selectedAddress);
 
 	return isLoaded ? (
-		<div>
-			<Map selectedAddress={selectedAddress} />
-			<SearchBar setSelectedAddress={setSelectedAddress} />
+		<div className="MainApp">
+			<div className="MainApp-map">
+				<SearchBar setSelectedAddress={setSelectedAddress} />
+				<Map selectedAddress={selectedAddress} />
+			</div>
+			<div className="MainApp-dashboard">
+				<Dashboard selectedAddress={selectedAddress} />
+			</div>
 		</div>
 	) : (
 		<div>Loading...</div>

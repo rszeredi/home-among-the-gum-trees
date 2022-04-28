@@ -1,0 +1,13 @@
+.MainApp {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.MainApp-map {
+	width: 50%;
+}
+
+.MainApp-dashboard {
+	width: 50%;
+}

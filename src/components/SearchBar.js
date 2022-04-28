@@ -59,26 +59,3 @@ function SearchBar({ setSelectedAddress }) {
 }
 
 export default SearchBar;
-
-// import React, { useState } from 'react';
-
-// import TextField from '@mui/material/TextField';
-
-// function SearchBar() {
-// 	const [ search, setSearch ] = useState('');
-// 	const handleChange = (e) => {
-// 		setSearch(e.target.value);
-// 	};
-// 	return (
-// 		<div>
-// 			<TextField
-// 				id="SearchBar-input"
-// 				label="Search for an address"
-// 				variant="outlined"
-// 				onChange={handleChange}
-// 			/>
-// 		</div>
-// 	);
-// }
-
-// export default SearchBar;
