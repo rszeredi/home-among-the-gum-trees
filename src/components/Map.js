@@ -13,17 +13,6 @@ const center = {
 	lng: 144.96
 };
 
-// https://developers.google.com/maps/documentation/places/web-service/supported_types
-const placesTypes = [
-	[ 'gym' ],
-	[ 'park' ],
-	[ 'restaurant' ],
-	[ 'bar' ],
-	[ 'cafe' ],
-	[ 'bus_station', 'light_rail_station', 'subway_station', 'train_station', 'transit_station' ],
-	[ 'supermarket', 'bakery' ]
-];
-
 function Map({ selectedAddress }) {
 	const onMapLoad = (map) => {
 		const service = new window.google.maps.places.PlacesService(map);

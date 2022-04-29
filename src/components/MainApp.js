@@ -17,7 +17,6 @@ function MainApp() {
 	const [ selectedAddress, setSelectedAddress ] = useState(null);
 	const [ placesOfInterest, setPlacesOfInterest ] = useState(null);
 	console.log('selectedAddress', selectedAddress);
-
 	return isLoaded ? (
 		<div className="MainApp">
 			<div className="MainApp-map">

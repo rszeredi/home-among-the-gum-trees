@@ -1,4 +1,15 @@
-export const parseNearbySearchResults = (results) => {
+// https://developers.google.com/maps/documentation/places/web-service/supported_types
+export const PLACE_TYPES = [
+	[ 'gym' ],
+	[ 'park' ],
+	[ 'restaurant' ],
+	[ 'bar' ],
+	[ 'cafe' ],
+	[ 'bus_station', 'light_rail_station', 'subway_station', 'train_station', 'transit_station' ],
+	[ 'supermarket', 'bakery' ]
+];
+
+export function parseNearbySearchResults(results) {
 	return results.map((res) => {
 		const {
 			name,
@@ -31,4 +42,4 @@ export const parseNearbySearchResults = (results) => {
 			url
 		};
 	});
-};
+}
