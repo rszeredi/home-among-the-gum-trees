@@ -17,6 +17,14 @@
   gap: 20px;
   padding: 10px;
   color: #fff;
+  text-decoration: none;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.SubDashboard-place:hover {
+  background-color: darkgray;
+  color: black;
 }
 
 .SubDashboard-place-image-container img {
