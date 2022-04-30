@@ -1,0 +1,54 @@
+.Dashboard {
+	height: 100vh;
+}
+
+.Dashboard-heading {
+	font-size: 1.8rem;
+	padding: 10px;
+}
+
+.Dashboard-container {
+	overflow-y: scroll;
+	height: 90%;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	@media (max-width: 1600px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.SubDashboard-heading {
+	text-transform: capitalize;
+}
+
+.SubDashboard table {
+	width: 100%;
+}
+
+.SubDashboard td,
+th {
+	padding: 0.6rem;
+	max-width: 200px;
+}
+
+.SubDashboard tr:nth-child(even) {
+	background-color: #ddd;
+}
+
+.SubDashboard tr:hover {
+	background-color: rgba(4, 237, 171, 0.419);
+}
+
+.SubDashboard thead tr,
+.SubDashboard thead tr:hover {
+	background-color: rgba(62, 36, 212, 0.606);
+	color: white;
+	cursor: default;
+}
+
+.SubDashboard tr {
+	transition: background-color 0.2s;
+	cursor: pointer;
+}

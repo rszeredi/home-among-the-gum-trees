@@ -1,4 +1,21 @@
-.SearchBar-input {
-	width: 50%;
-	padding: 0.5rem;
+.SearchBar {
+  position: absolute;
+  z-index: 100;
+  min-width: 300px;
+  width: 80%;
+  top: 10px;
+  left: 10px;
 }
+
+.SearchBar-input {
+  width: 50%;
+  padding: 0.5rem;
+  font-family: inherit;
+  color: #0f1114;
+}
+
+.SearchBar-dropdown {
+  color: #0f1114;
+  font-weight: normal;
+}
+/*# sourceMappingURL=SearchBar.css.map */

@@ -1,0 +1,34 @@
+@import '../styles/variables';
+@import '../styles/common';
+
+.SubDashboard-heading {
+	font-size: 1.2rem;
+	padding: 10px;
+	border-bottom: 1px solid gray;
+}
+
+.SubDashboard-place {
+	@include flexCenterRowJustifyStart();
+	gap: 20px;
+	padding: 10px;
+	color: $lightTextColor;
+}
+
+.SubDashboard-place-image-container img {
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	border-radius: 20%;
+}
+
+.SubDashboard-place-info {
+	display: flex;
+	flex-direction: column;
+	font-size: 0.8rem;
+	gap: 10px;
+}
+
+.SubDashboard-place-info-heading {
+	font-weight: bold;
+	font-size: 1rem;
+}

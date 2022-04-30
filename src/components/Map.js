@@ -52,6 +52,11 @@ function Map({ selectedAddress }) {
 				center={center}
 				zoom={12}
 				onLoad={onMapLoad}
+				options={{
+					mapId: process.env.REACT_APP_MAP_ID,
+					disableDefaultUI: true,
+					streetViewControl: true
+				}}
 			>
 				{selectedAddress && <Marker position={selectedAddress} />}
 			</GoogleMap>

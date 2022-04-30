@@ -11,7 +11,8 @@ const mapsLibraries = [ 'places' ];
 function MainApp() {
 	const { isLoaded } = useLoadScript({
 		googleMapsApiKey: process.env.REACT_APP_MAPS_API_KEY,
-		libraries: mapsLibraries
+		libraries: mapsLibraries,
+		mapIds: [ process.env.REACT_APP_MAP_ID ]
 	});
 
 	const [ selectedAddress, setSelectedAddress ] = useState(null);

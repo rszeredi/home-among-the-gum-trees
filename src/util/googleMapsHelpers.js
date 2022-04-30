@@ -24,7 +24,7 @@ export function parseNearbySearchResults(results) {
 			icon,
 			icon_mask_base_uri
 		} = res;
-		const photo = photos ? photos[0].getUrl() : null;
+		const imageUrl = photos ? photos[0].getUrl() : null;
 		const url = `https://www.google.com/maps/place/?q=place_id:${place_id}`;
 		const iconNonColored = `${icon_mask_base_uri}.svg`;
 		return {
@@ -36,7 +36,7 @@ export function parseNearbySearchResults(results) {
 			rating,
 			price_level,
 			user_ratings_total,
-			photo,
+			imageUrl,
 			icon,
 			iconNonColored,
 			url

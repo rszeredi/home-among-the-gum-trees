@@ -36,7 +36,7 @@ function SearchBar({ setSelectedAddress }) {
 	};
 
 	return (
-		<div>
+		<div className="SearchBar">
 			<Combobox onSelect={handleSelect}>
 				<ComboboxInput
 					value={value}
@@ -46,7 +46,7 @@ function SearchBar({ setSelectedAddress }) {
 					placeholder="Search for an address"
 				/>
 				<ComboboxPopover>
-					<ComboboxList>
+					<ComboboxList className="SearchBar-dropdown">
 						{status === 'OK' &&
 							data.map(({ place_id, description }) => (
 								<ComboboxOption key={place_id} value={description} />
