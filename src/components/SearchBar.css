@@ -1,10 +1,15 @@
 .SearchBar {
   position: absolute;
   z-index: 100;
-  min-width: 300px;
-  width: 80%;
+  width: 35px;
   top: 10px;
   left: 10px;
+  -webkit-transition: width 0.3s ease-out;
+  transition: width 0.3s ease-out;
+}
+
+.SearchBar:hover {
+  width: 80%;
 }
 
 .SearchBar-input {
@@ -17,5 +22,10 @@
 .SearchBar-dropdown {
   color: #0f1114;
   font-weight: normal;
+}
+
+.SearchBar div[data-reach-popover] {
+  width: 80%;
+  background-color: red;
 }
 /*# sourceMappingURL=SearchBar.css.map */

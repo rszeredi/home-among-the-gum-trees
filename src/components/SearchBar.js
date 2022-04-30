@@ -36,14 +36,14 @@ function SearchBar({ setSelectedAddress }) {
 	};
 
 	return (
-		<div className="SearchBar">
+		<div className="SearchBar" style={{ minWidth: value ? '80%' : '35px' }}>
 			<Combobox onSelect={handleSelect}>
 				<ComboboxInput
 					value={value}
 					onChange={handleSearchChange}
 					disabled={!ready}
 					className="SearchBar-input"
-					placeholder="Search for an address"
+					placeholder="🔍"
 				/>
 				<ComboboxPopover>
 					<ComboboxList className="SearchBar-dropdown">
