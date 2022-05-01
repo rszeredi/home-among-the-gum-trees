@@ -1,4 +1,4 @@
-import { GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
+import { GoogleMap, Marker, InfoWindow, Circle } from '@react-google-maps/api';
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 
 import SearchBar from './SearchBar';
@@ -152,6 +152,8 @@ function Map({
 		setInfoWindowPlace(null);
 	};
 
+	const circleOptions = {fillOpacity: 0.15, fillColor: 'lightgreen', strokeColor: 'lightgreen', strokeWeight: 1	}
+
 	return (
 		<div>
 			<GoogleMap
@@ -161,7 +163,10 @@ function Map({
 				onLoad={onMapLoad}
 				options={mapOptions}
 			>
+				
 				{selectedAddress && (
+					<>
+					<Circle center={selectedAddress} radius={1000} options={circleOptions}/>
 					<Marker
 						position={selectedAddress}
 						shape={shape}
@@ -190,6 +195,7 @@ function Map({
 						// 	backgroundColor: 'pink'
 						// }}
 					/>
+					</>
 				)}
 				{markers}
 				{infoWindowPlace && (
