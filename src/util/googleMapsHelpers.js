@@ -14,7 +14,7 @@ export const PLACE_TYPES = [
 	[ 'supermarket', 'bakery' ]
 ];
 
-export function parseNearbySearchResults(results) {
+export function parseNearbySearchResults(results, forStorage = false) {
 	return results.map((res) => {
 		const {
 			name,
@@ -30,7 +30,14 @@ export function parseNearbySearchResults(results) {
 			icon_mask_base_uri,
 			geometry
 		} = res;
-		const imageUrl = photos ? photos[0].getUrl() : null;
+		let imageUrl = photos ? photos[0].getUrl() : null;
+
+		if (forStorage) {
+			imageUrl = imageUrl
+				? imageUrl.replace(`&key=${process.env.REACT_APP_MAPS_API_KEY}`, '&key=')
+				: imageUrl;
+		}
+
 		const url = `https://www.google.com/maps/place/?q=place_id:${place_id}`;
 		const iconNonColored = `${icon_mask_base_uri}.svg`;
 		const coords = { lat: geometry.location.lat(), lng: geometry.location.lng() };

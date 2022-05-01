@@ -7,9 +7,10 @@
 		"vicinity": "Glen Iris",
 		"rating": 3.6,
 		"user_ratings_total": 13,
-		"imageUrl": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uEABHpJ631OvOWorrRlTdkX33rnJmaYKuBLl0NGcMNoHM3F6jEmVN_bJcyyj4i2Gu31wARlgGbJBOZGvMIgTVtEJWlRYkTptS2TZEMUvNJcLsC9aaCpJITGTLxrXARgm7R_M-G1zOBIKyNROwCQT8OKPqlVPYVgmCa1uPamaVDiCKWnx&3u3024&5m1&2e1&callback=none&token=114913",
+		"imageUrl": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uEBijhdwHfpGbyFd-T_ItHnOltdMQTu7qBBClT8i1iC1uDQ6PMfBugbJeH3pxdJNlenyeRZdoFg2rSgI59MOBlsJxP_l7mkEvP-MWhGme387abNgbXuPP8x4TgItVzMsUJL51AntLSWdusnvOkknoYmd7CX5hu0EYiTMQ8d2MfhK2xUL&3u3024&5m1&2e1&callback=none&key=&token=112146",
 		"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/train-71.png",
 		"iconNonColored": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/train_rail_1_pinlet.svg",
-		"url": "https://www.google.com/maps/place/?q=place_id:ChIJWaNKabhB1moR8Af1CXZWBB0"
+		"url": "https://www.google.com/maps/place/?q=place_id:ChIJWaNKabhB1moR8Af1CXZWBB0",
+		"coords": { "lat": -37.851634, "lng": 145.0804351 }
 	}
 ]

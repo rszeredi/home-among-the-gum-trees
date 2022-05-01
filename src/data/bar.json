@@ -10,7 +10,8 @@
 		"imageUrl": null,
 		"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
 		"iconNonColored": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet.svg",
-		"url": "https://www.google.com/maps/place/?q=place_id:ChIJ9wsGrzdB1moRcAbyS1w5wzc"
+		"url": "https://www.google.com/maps/place/?q=place_id:ChIJ9wsGrzdB1moRcAbyS1w5wzc",
+		"coords": { "lat": -37.8507511, "lng": 145.0813688 }
 	},
 	{
 		"name": "Greenhart Wine Bar",
@@ -28,10 +29,11 @@
 		"vicinity": "1226 Toorak Road, Camberwell",
 		"rating": 4.9,
 		"user_ratings_total": 18,
-		"imageUrl": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uED7Qu7ZlYU0HA3h4Bh9s1B2UMN_qMvgtikWp5T4QJtDsVE2P_BYQFVz04VSt7yQKA6YjbranqWGc5xwCx333qv8lAjq_KCUlNBsGEFAyzdEWmwyswKzxD6VXueXPDBx_X4l5fIg0NqJoZWyLdOlxaKqmJKQScPrpry18QJr5NeJFG_y&3u1558&5m1&2e1&callback=none&token=44822",
+		"imageUrl": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uEDXiDJ251lm7_lH0_JNRngkbm7eEQ2ICjerj830mIoeimeTiXiD9b9-io032KSfOTEFDsZWlCi1AMx1X8cFwFAwLREs8Wk6XvtkAsjlgEnEtY9RvRW0_yXeKRgLq5u8PodQAaaEMfCiOFMovDa2Z_-l4VESlmsGK614RN74qVIPztjg&3u1558&5m1&2e1&callback=none&key=&token=109080",
 		"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
 		"iconNonColored": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet.svg",
-		"url": "https://www.google.com/maps/place/?q=place_id:ChIJScTTOcFB1moRrmXszh7WGyg"
+		"url": "https://www.google.com/maps/place/?q=place_id:ChIJScTTOcFB1moRrmXszh7WGyg",
+		"coords": { "lat": -37.84891499999999, "lng": 145.081283 }
 	},
 	{
 		"name": "Prohibition Food and Wine",
@@ -42,10 +44,11 @@
 		"rating": 4.3,
 		"price_level": 2,
 		"user_ratings_total": 413,
-		"imageUrl": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uEDtEyBY7VwgPG1MvNgeiysdZ9Z-4ICopfZI4WjmYee0MmqxipaJu7QEdZ2LsHd3t0Nr5kdA8mrp7fPJNwtXvxDzKmg3rXZg2jbwL-1NP70aThmrK8FOynJpSonvTf-Lx77-EOGy_ogL1b4hLcWdJhyF3s5P083kXiCXX1ULW38zaidd&3u3024&5m1&2e1&callback=none&token=46495",
+		"imageUrl": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uEAh9gsuqJZM_kkd3mS2ZOHHYOLF1cOdCK7EOR9YVjd3VDI6An4G8KLCktD8pdOjVmlR2qIztvMQ88mafb4G4EVkhBcyxdKvSasPqxN-ePvWwtOKnLvuIhPjeBId0cBkEPOXkETAVGHpxdcEK2_FbRuTqzkxfVBWlb8Xfmv52bl-T6EY&3u3024&5m1&2e1&callback=none&key=&token=117505",
 		"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
 		"iconNonColored": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet.svg",
-		"url": "https://www.google.com/maps/place/?q=place_id:ChIJnZiMJ01A1moRnHX3vvbFuC4"
+		"url": "https://www.google.com/maps/place/?q=place_id:ChIJnZiMJ01A1moRnHX3vvbFuC4",
+		"coords": { "lat": -37.85015059999999, "lng": 145.0942253 }
 	},
 	{
 		"name": "Hibiki",
@@ -64,10 +67,11 @@
 		"vicinity": "1161 Toorak Road, Camberwell",
 		"rating": 4.6,
 		"price_level": 2,
-		"user_ratings_total": 562,
-		"imageUrl": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uEAPpqzA_cR6XGbfrhhRZBoQ6Fk1hbV9Y0x4ueyYlg6lvW5U_dHTmQquhNk3sim0moi9yZS7haYU_s8mBw3D4b_ZIh-9IkeKF7AGmQHBuKoPdVilzcI-QkyH3DxNwICxRKuU_GRAv_dTUSF7aYkOgRPH5bHIR6SKNby4a67viQztQj4y&3u1024&5m1&2e1&callback=none&token=38119",
+		"user_ratings_total": 565,
+		"imageUrl": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uEAek6aaAtkArmsNg6D_wE2mQQrMkjPmH1TsJlfXtCrYFuKPUt0jzhYLpZtsbRhjxV8Z9bl_iqsbaMp6tW-Uf9pNFKjj8WBFnSizVni0dbjgcw8NexrWyQ9MEWdLiVfymPHnkWgZU9MSvLmpFiv1q0Q052JA5AXXKDbrkeJ4ugYx9GEt&3u1024&5m1&2e1&callback=none&key=&token=122281",
 		"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
 		"iconNonColored": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet.svg",
-		"url": "https://www.google.com/maps/place/?q=place_id:ChIJ0-nQ_JdB1moR410mLZ-rUqc"
+		"url": "https://www.google.com/maps/place/?q=place_id:ChIJ0-nQ_JdB1moR410mLZ-rUqc",
+		"coords": { "lat": -37.848207, "lng": 145.0777594 }
 	}
 ]

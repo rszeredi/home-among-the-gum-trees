@@ -11,8 +11,7 @@ function pluralizePlaceType(placeType) {
 
 function addMapKeyToImageUrl(imageUrl) {
 	if (!imageUrl) return;
-	const [ baseUrl, token ] = imageUrl.split('&token=');
-	return `${baseUrl}&key=${process.env.REACT_APP_MAPS_API_KEY}&token=${token}`;
+	return imageUrl.replace('&key=', `&key=${process.env.REACT_APP_MAPS_API_KEY}`);
 }
 
 function SubDashboard({ placeType, items }) {

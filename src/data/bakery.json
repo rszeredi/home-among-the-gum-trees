@@ -8,10 +8,11 @@
 		"rating": 4.2,
 		"price_level": 2,
 		"user_ratings_total": 102,
-		"imageUrl": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uEAThT5UEmi1fuyuADUusLk__0e-M45eYzgScajR4dLlstsb0UiCN3uL4mNw225HckhZ0iaf7pG_ZK3TE5P_M2H6pZ8wSaIBmUEd0Fa-jMjmh_lNHiIKtlhpweZ-6gUPqenhJvzO4vQG3-sJbFT0LzoDGA9a2ipn9xtntJYZ6YzstYkJ&3u4032&5m1&2e1&callback=none&token=127506",
+		"imageUrl": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uECKPwLDAuJtUhXz3dqY411mBWLUO7Ix4ehfvE6vpvETfCUFVzgRuitemPEgnIk_X3UgntJsXajpnyzPbn-Fs5vMcTYY2fO8bI8SV1JaKwFQcMLKhvRK-IA4TIB_7T7OL1Br6zb51GVhaO_yensY_b4e4GCsyCXmjtic8X6-7XC5nysP&3u4032&5m1&2e1&callback=none&key=&token=11722",
 		"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
 		"iconNonColored": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet.svg",
-		"url": "https://www.google.com/maps/place/?q=place_id:ChIJD2rKorlB1moR5ZWspOmffYQ"
+		"url": "https://www.google.com/maps/place/?q=place_id:ChIJD2rKorlB1moR5ZWspOmffYQ",
+		"coords": { "lat": -37.84874420000001, "lng": 145.0803847 }
 	},
 	{
 		"name": "Cake Tin Melbourne",
@@ -24,7 +25,8 @@
 		"imageUrl": null,
 		"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
 		"iconNonColored": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet.svg",
-		"url": "https://www.google.com/maps/place/?q=place_id:ChIJ7WUQjwRB1moR9R0aQbibOOY"
+		"url": "https://www.google.com/maps/place/?q=place_id:ChIJ7WUQjwRB1moR9R0aQbibOOY",
+		"coords": { "lat": -37.8491965, "lng": 145.0836706 }
 	},
 	{
 		"name": "Wild Dough Bakery",
@@ -34,10 +36,11 @@
 		"vicinity": "3/1407 Toorak Road, Camberwell",
 		"rating": 4.5,
 		"user_ratings_total": 20,
-		"imageUrl": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uEChm2SDFyErU8yFV8WaJLtYC2I82Kx34sIaDIPGHVLEyIJnSUNDpyynbM8EqZSSrzpWDYPdyJKuN3VfWj7gPHueMYoGJ2fs77o_YKg85XJfYHZf4Qh8RWcEwYOgUTedqsiO_1Nx6FRoki4NTsEsAxUFcys41voEpRyz9y85sPxBgC9-&3u3264&5m1&2e1&callback=none&token=42088",
+		"imageUrl": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uEB97vBNQaZ2WQFZsTJEiW0tWWfzH8b20e-diRl0kTYUqVc4AK0QBb_gNrAMqEbjBFnkCk210VDMwnlzJJTlxQ6i2vprvQjiPg2PFboyNlW34HAulJpsFCp28BrY1dPvHO8ZdDe1_F7LJ4Gd0Yu3PsLpk9CgxGMdpUpleODSwPl9bAg4&3u3264&5m1&2e1&callback=none&key=&token=93840",
 		"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
 		"iconNonColored": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet.svg",
-		"url": "https://www.google.com/maps/place/?q=place_id:ChIJ5e2C_odB1moRtrCY97aD7X8"
+		"url": "https://www.google.com/maps/place/?q=place_id:ChIJ5e2C_odB1moRtrCY97aD7X8",
+		"coords": { "lat": -37.8500666, "lng": 145.0946375 }
 	},
 	{
 		"name": "Cake & Pie Shop The",
@@ -47,9 +50,10 @@
 		"vicinity": "1165 Toorak Road, Camberwell",
 		"rating": 3.7,
 		"user_ratings_total": 15,
-		"imageUrl": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uEBpRzO-R0yqoxSVAsVilKXAArNlBzx5yj1j4vy6xAnQiJY5VY13MKbjHLNgu7OLg5D_aUaiWZRBqiFOzJo-PvHExJcK1L2gKfvfBsIJIWrEfWVZ0x4EENalRK-t38x8SWKY1r5HLNJc0dbAYFOQpxo4eQ8dWitvWkBSFqCTsAGAbq84&3u3024&5m1&2e1&callback=none&token=63455",
+		"imageUrl": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sAap_uECIQ2OuTvj4wE9X9p9Ooh-1TuOv4-lIit_uRI2Rb6XI6_Ie9cCMtob0qu1qRs7H7rnjnVt2wPv6AmLs-IXxJnrjPomRmbWrtAF2euZ_nmanWoMoS8Rnr1gQIdEMWT9Ln9WMsdm-5FFIKq8ykOHwxYKp8LCgAWvunyyGvMIUYMNSm3So&3u3024&5m1&2e1&callback=none&key=&token=34709",
 		"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
 		"iconNonColored": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet.svg",
-		"url": "https://www.google.com/maps/place/?q=place_id:ChIJW4RQOblB1moRt79-XcFNIGU"
+		"url": "https://www.google.com/maps/place/?q=place_id:ChIJW4RQOblB1moRt79-XcFNIGU",
+		"coords": { "lat": -37.8482049, "lng": 145.0778765 }
 	}
 ]

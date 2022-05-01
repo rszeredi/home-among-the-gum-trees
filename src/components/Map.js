@@ -9,7 +9,17 @@ const containerStyle = {
 	// width: '100%'
 	height: '100vh'
 };
-const PLACE_TYPES = [ 'cafe', 'restaurant', 'bar', 'gym', 'park' ];
+// const PLACE_TYPES = [ 'cafe', 'restaurant', 'bar', 'gym', 'park', 'supermarket', 'bakery' ];
+// const PLACE_TYPES = [ 'cafe', 'restaurant' ];
+const PLACE_TYPES = [
+	'bar',
+	'gym',
+	'park',
+	'supermarket',
+	'bakery',
+	'transit_station',
+	'train_station'
+];
 
 function Map({ selectedAddress, setSelectedAddress, placesOfInterest, setPlacesOfInterest }) {
 	const [ placesService, setPlacesService ] = useState(null);
@@ -42,6 +52,7 @@ function Map({ selectedAddress, setSelectedAddress, placesOfInterest, setPlacesO
 				console.log('Searching placeType: ', placeType);
 
 				const resultsParsed = parseNearbySearchResults(results).slice(0, 3);
+				// console.log('results', JSON.stringify(parseNearbySearchResults(results, true)));
 				setPlacesOfInterest((prevPlacesOfInterest) => ({
 					...prevPlacesOfInterest,
 					[placeType]: resultsParsed
