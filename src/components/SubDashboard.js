@@ -14,10 +14,16 @@ function addMapKeyToImageUrl(imageUrl) {
 	return imageUrl.replace('&key=', `&key=${process.env.REACT_APP_MAPS_API_KEY}`);
 }
 
-function SubDashboard({ placeType, items }) {
-	const itemRows = items
-		.slice(0, 3)
-		.map((item) => <Place key={item.place_id} {...item} placeType={placeType} />);
+function SubDashboard({ placeType, items, setInfoWindowPlace }) {
+	const itemRows = items.map((item, idx) => (
+		<Place
+			key={item.place_id}
+			item={item}
+			placeType={placeType}
+			setInfoWindowPlace={setInfoWindowPlace}
+			idx={idx}
+		/>
+	));
 	return (
 		<div className="SubDashboard">
 			<h4 className="SubDashboard-heading">
@@ -28,28 +34,24 @@ function SubDashboard({ placeType, items }) {
 	);
 }
 
-function getImageUrl(realImageUrl, place_type) {
+function getImageUrl(realImageUrl, place_type, idx) {
 	if (process.env.NODE_ENV === 'development') {
 		const imageCandidates = placeholderImageUrls[place_type];
-		return imageCandidates[Math.floor(Math.random() * imageCandidates.length)];
+		return imageCandidates[idx % 3];
 	} else return addMapKeyToImageUrl(realImageUrl);
 }
 
-function Place({
-	name,
-	imageUrl,
-	rating,
-	user_ratings_total,
-	vicinity,
-	price_level,
-	placeType,
-	url
-}) {
+function Place({ item, placeType, setInfoWindowPlace, idx }) {
+	const { name, imageUrl, rating, user_ratings_total, vicinity, price_level, url, coords } = item;
 	const ratings_count_string = user_ratings_total ? `(${user_ratings_total})` : '';
+	const imageUrlDisplay = getImageUrl(imageUrl, placeType, idx);
 
-	const imageUrlDisplay = getImageUrl(imageUrl, placeType);
+	const handleClick = () => {
+		setInfoWindowPlace(item);
+	};
 	return (
-		<a href={url} target="_blank" className="SubDashboard-place">
+		// <a href={url} target="_blank" className="SubDashboard-place">
+		<div className="SubDashboard-place" onClick={handleClick}>
 			<div className="SubDashboard-place-image-container">
 				{imageUrlDisplay && <img src={imageUrlDisplay} alt="place-image" />}
 			</div>
@@ -62,7 +64,8 @@ function Place({
 				</div>
 				<div>{vicinity}</div>
 			</div>
-		</a>
+		</div>
+		// </a>
 	);
 }
 

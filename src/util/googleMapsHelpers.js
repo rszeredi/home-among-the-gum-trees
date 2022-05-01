@@ -58,3 +58,8 @@ export function parseNearbySearchResults(results, forStorage = false) {
 		};
 	});
 }
+
+export function selectTopRated(results, topK) {
+	const resultsSorted = results.sort((x, y) => y.rating - x.rating);
+	return resultsSorted.slice(0, topK);
+}

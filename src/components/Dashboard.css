@@ -16,7 +16,7 @@
       grid-template-columns: 1fr 1fr;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1400px) {
   .Dashboard-container {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;

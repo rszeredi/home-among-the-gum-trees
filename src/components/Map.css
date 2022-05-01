@@ -1,1 +1,14 @@
-/* No CSS *//*# sourceMappingURL=Map.css.map */
+.Map-infowindow {
+  color: #0f1114;
+  font-family: Sora;
+}
+
+.Map-infowindow h3 {
+  text-align: center;
+}
+
+.Map-infowindow a {
+  text-decoration: none;
+  color: #0f1114;
+}
+/*# sourceMappingURL=Map.css.map */

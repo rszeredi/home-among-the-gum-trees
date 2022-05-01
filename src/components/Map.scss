@@ -1,1 +1,16 @@
+@import '../styles/variables';
+@import '../styles/common';
 
+.Map-infowindow {
+	color: $darkTextColor;
+	font-family: Sora;
+
+	h3 {
+		text-align: center;
+	}
+}
+
+.Map-infowindow a {
+	text-decoration: none;
+	color: $darkTextColor;
+}

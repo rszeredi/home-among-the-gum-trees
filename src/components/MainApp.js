@@ -16,6 +16,7 @@ function MainApp() {
 
 	const [ selectedAddress, setSelectedAddress ] = useState(null);
 	const [ placesOfInterest, setPlacesOfInterest ] = useState({});
+	const [ infoWindowPlace, setInfoWindowPlace ] = useState(null);
 
 	return isLoaded ? (
 		<div className="MainApp">
@@ -25,10 +26,16 @@ function MainApp() {
 					setSelectedAddress={setSelectedAddress}
 					placesOfInterest={placesOfInterest}
 					setPlacesOfInterest={setPlacesOfInterest}
+					infoWindowPlace={infoWindowPlace}
+					setInfoWindowPlace={setInfoWindowPlace}
 				/>
 			</div>
 			<div className="MainApp-dashboard">
-				<Dashboard selectedAddress={selectedAddress} placesOfInterest={placesOfInterest} />
+				<Dashboard
+					selectedAddress={selectedAddress}
+					placesOfInterest={placesOfInterest}
+					setInfoWindowPlace={setInfoWindowPlace}
+				/>
 			</div>
 		</div>
 	) : (

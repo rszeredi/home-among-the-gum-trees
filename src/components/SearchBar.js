@@ -6,7 +6,7 @@ import {
 	ComboboxPopover
 } from '@reach/combobox';
 import '@reach/combobox/styles.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
 import { useGoogleMap } from '@react-google-maps/api';
 
@@ -22,6 +22,12 @@ function SearchBar({ setSelectedAddress }) {
 		suggestions: { status, data },
 		clearSuggestions
 	} = usePlacesAutocomplete();
+	useEffect(() => {
+		if (process.env.NODE_ENV === 'development') {
+			setValue(process.env.REACT_APP_BERYL_ADDRESS);
+		}
+	}, []);
+
 	const handleSearchChange = (e) => {
 		setValue(e.target.value);
 	};

@@ -1,8 +1,10 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAGA,AAAA,eAAe,CAAC;EACf,KAAK,ECFU,OAAO;EDGtB,WAAW,EAAE,IAAI;CAKjB;;AAPD,AAIC,eAJc,CAId,EAAE,CAAC;EACF,UAAU,EAAE,MAAM;CAClB;;AAGF,AAAA,eAAe,CAAC,CAAC,CAAC;EACjB,eAAe,EAAE,IAAI;EACrB,KAAK,ECZU,OAAO;CDatB",
     "sources": [
-        "Map.scss"
+        "Map.scss",
+        "../styles/_variables.scss",
+        "../styles/_common.scss"
     ],
     "names": [],
     "file": "Map.css"

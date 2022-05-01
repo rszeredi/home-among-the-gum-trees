@@ -5,12 +5,19 @@ import SubDashboard from './SubDashboard';
 
 import './Dashboard.css';
 
-function Dashboard({ selectedAddress, placesOfInterest }) {
+function Dashboard({ selectedAddress, placesOfInterest, setInfoWindowPlace }) {
 	const subDashboards = !placesOfInterest
 		? null
 		: Object.entries(placesOfInterest).map(([ placeType, places ]) => {
 				if (!places) return;
-				return <SubDashboard key={placeType} placeType={placeType} items={places} />;
+				return (
+					<SubDashboard
+						key={placeType}
+						placeType={placeType}
+						items={places}
+						setInfoWindowPlace={setInfoWindowPlace}
+					/>
+				);
 			});
 
 	return (

@@ -1,3 +1,5 @@
+import { selectTopRated } from '../util/googleMapsHelpers';
+
 import bakery from './bakery.json';
 import bar from './bar.json';
 import cafe from './cafe.json';
@@ -21,9 +23,12 @@ const DATA = {
 };
 
 // temp for handling stored data
-export function importNearbyPlaceSampleData(place_type) {
-	if (!place_type) return DATA;
-	return DATA[place_type];
+export function importNearbyPlaceSampleData(topK) {
+	const selectedPlaces = {};
+	for (let placeType in DATA) {
+		selectedPlaces[placeType] = selectTopRated(DATA[placeType], topK);
+	}
+	return selectedPlaces;
 }
 
 export const placeholderImageUrls = {
