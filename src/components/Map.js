@@ -1,5 +1,6 @@
 import { GoogleMap, Marker } from '@react-google-maps/api';
 import React from 'react';
+import SearchBar from './SearchBar';
 
 import { parseNearbySearchResults, MELBOURNE_LAT_LNG } from '../util/googleMapsHelpers';
 
@@ -8,7 +9,7 @@ const containerStyle = {
 	height: '100vh'
 };
 
-function Map({ selectedAddress }) {
+function Map({ selectedAddress, setSelectedAddress }) {
 	const onMapLoad = (map) => {
 		const service = new window.google.maps.places.PlacesService(map);
 		const melbourne = new window.google.maps.LatLng(
@@ -54,6 +55,7 @@ function Map({ selectedAddress }) {
 				}}
 			>
 				{selectedAddress && <Marker position={selectedAddress} />}
+				<SearchBar setSelectedAddress={setSelectedAddress} />
 			</GoogleMap>
 		</div>
 	);

@@ -8,10 +8,13 @@ import {
 import '@reach/combobox/styles.css';
 import React from 'react';
 import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
+import { useGoogleMap } from '@react-google-maps/api';
 
 import './SearchBar.css';
 
 function SearchBar({ setSelectedAddress }) {
+	const map = useGoogleMap();
+
 	const {
 		ready,
 		value,
@@ -30,9 +33,11 @@ function SearchBar({ setSelectedAddress }) {
 
 		// covert to coords
 		const results = await getGeocode({ address });
-		const { lat, lng } = await getLatLng(results[0]);
-		console.log('lat,lng', lat, lng);
-		setSelectedAddress({ lat, lng });
+		const latlng = await getLatLng(results[0]);
+		setSelectedAddress({ address, ...latlng });
+
+		// pan to address on map
+		map.panTo(latlng);
 	};
 
 	return (

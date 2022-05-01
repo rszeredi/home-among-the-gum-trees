@@ -19,7 +19,7 @@ function Dashboard({ selectedAddress }) {
 
 	return (
 		<div className="Dashboard">
-			<div className="Dashboard-heading">Dashboard for {`${selectedAddress}`}</div>
+			<div className="Dashboard-heading">Dashboard for {`${selectedAddress?.address}`}</div>
 			<div className="Dashboard-container">{subDashboards}</div>
 		</div>
 	);

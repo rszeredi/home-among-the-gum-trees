@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useLoadScript } from '@react-google-maps/api';
-import SearchBar from './SearchBar';
 import Map from './Map';
 import Dashboard from './Dashboard';
 
@@ -21,8 +20,7 @@ function MainApp() {
 	return isLoaded ? (
 		<div className="MainApp">
 			<div className="MainApp-map">
-				<SearchBar setSelectedAddress={setSelectedAddress} />
-				<Map selectedAddress={selectedAddress} />
+				<Map selectedAddress={selectedAddress} setSelectedAddress={setSelectedAddress} />
 			</div>
 			<div className="MainApp-dashboard">
 				<Dashboard selectedAddress={selectedAddress} />
