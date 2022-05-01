@@ -4,11 +4,8 @@ import Map from './Map';
 import Dashboard from './Dashboard';
 
 import './MainApp.css';
-import { importNearbyPlaceSampleData } from '../data/testData';
 
 const mapsLibraries = [ 'places' ];
-
-const testData = importNearbyPlaceSampleData();
 
 function MainApp() {
 	const { isLoaded } = useLoadScript({

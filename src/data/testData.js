@@ -11,13 +11,13 @@ import transit_station from './transit_station.json';
 const DATA = {
 	cafe,
 	restaurant,
-	bar
-	// bakery,
-	// gym,
-	// park,
-	// supermarket,
-	// train_station,
-	// transit_station
+	bar,
+	bakery,
+	gym,
+	park,
+	supermarket,
+	train_station,
+	transit_station
 };
 
 // temp for handling stored data

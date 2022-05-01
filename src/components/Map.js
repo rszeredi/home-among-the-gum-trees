@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 
 import { parseNearbySearchResults, MELBOURNE_LAT_LNG } from '../util/googleMapsHelpers';
+import { importNearbyPlaceSampleData } from '../data/testData';
 
 const containerStyle = {
 	// width: '100%'
@@ -60,12 +61,20 @@ function Map({ selectedAddress, setSelectedAddress, placesOfInterest, setPlacesO
 				// if (status == window.google.maps.places.PlacesServiceStatus.OK)
 			};
 
-			PLACE_TYPES.forEach((placeType) => {
-				const request = { ...requestBase, type: placeType };
-				placesService.nearbySearch(request, (results, status, next_page_token) =>
-					nearbySearchCallback(results, status, next_page_token, placeType)
-				);
-			});
+			if (
+				process.env.NODE_ENV !== 'development' ||
+				process.env.REACT_APP_OVERRIDE_ENV === 'prod'
+			) {
+				PLACE_TYPES.forEach((placeType) => {
+					const request = { ...requestBase, type: placeType };
+					placesService.nearbySearch(request, (results, status, next_page_token) =>
+						nearbySearchCallback(results, status, next_page_token, placeType)
+					);
+				});
+			} else {
+				const testData = importNearbyPlaceSampleData();
+				setPlacesOfInterest(testData);
+			}
 		},
 		[ selectedAddress ]
 	);
