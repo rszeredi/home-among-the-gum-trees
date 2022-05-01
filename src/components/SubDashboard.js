@@ -38,7 +38,7 @@ function getImageUrl(realImageUrl, place_type, idx) {
 	if (process.env.NODE_ENV === 'development') {
 		const imageCandidates = placeholderImageUrls[place_type];
 		return imageCandidates[idx % 3];
-	} else return addMapKeyToImageUrl(realImageUrl);
+	} else return realImageUrl;
 }
 
 function Place({ item, placeType, setInfoWindowPlace, idx }) {

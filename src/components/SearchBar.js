@@ -24,7 +24,7 @@ function SearchBar({ setSelectedAddress }) {
 	} = usePlacesAutocomplete();
 	useEffect(() => {
 		if (process.env.NODE_ENV === 'development') {
-			setValue(process.env.REACT_APP_BERYL_ADDRESS);
+			setValue(process.env.REACT_APP_BERYL_ADDRESS || '');
 		}
 	}, []);
 
