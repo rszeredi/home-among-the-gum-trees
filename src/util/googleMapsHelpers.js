@@ -1,3 +1,8 @@
+export const MELBOURNE_LAT_LNG = {
+	lat: -37.81,
+	lng: 144.96
+};
+
 // https://developers.google.com/maps/documentation/places/web-service/supported_types
 export const PLACE_TYPES = [
 	[ 'gym' ],

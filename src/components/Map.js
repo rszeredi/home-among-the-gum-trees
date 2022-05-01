@@ -1,16 +1,11 @@
 import { GoogleMap, Marker } from '@react-google-maps/api';
 import React from 'react';
 
-import { parseNearbySearchResults } from '../util/googleMapsHelpers';
+import { parseNearbySearchResults, MELBOURNE_LAT_LNG } from '../util/googleMapsHelpers';
 
 const containerStyle = {
 	// width: '100%'
 	height: '100vh'
-};
-
-const center = {
-	lat: -37.81,
-	lng: 144.96
 };
 
 function Map({ selectedAddress }) {
@@ -49,7 +44,7 @@ function Map({ selectedAddress }) {
 		<div>
 			<GoogleMap
 				mapContainerStyle={containerStyle}
-				center={center}
+				center={MELBOURNE_LAT_LNG}
 				zoom={12}
 				onLoad={onMapLoad}
 				options={{
