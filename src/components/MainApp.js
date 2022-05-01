@@ -4,8 +4,11 @@ import Map from './Map';
 import Dashboard from './Dashboard';
 
 import './MainApp.css';
+import { importNearbyPlaceSampleData } from '../data/testData';
 
 const mapsLibraries = [ 'places' ];
+
+const testData = importNearbyPlaceSampleData();
 
 function MainApp() {
 	const { isLoaded } = useLoadScript({
@@ -15,15 +18,20 @@ function MainApp() {
 	});
 
 	const [ selectedAddress, setSelectedAddress ] = useState(null);
-	const [ placesOfInterest, setPlacesOfInterest ] = useState(null);
-	console.log('selectedAddress', selectedAddress);
+	const [ placesOfInterest, setPlacesOfInterest ] = useState({});
+
 	return isLoaded ? (
 		<div className="MainApp">
 			<div className="MainApp-map">
-				<Map selectedAddress={selectedAddress} setSelectedAddress={setSelectedAddress} />
+				<Map
+					selectedAddress={selectedAddress}
+					setSelectedAddress={setSelectedAddress}
+					placesOfInterest={placesOfInterest}
+					setPlacesOfInterest={setPlacesOfInterest}
+				/>
 			</div>
 			<div className="MainApp-dashboard">
-				<Dashboard selectedAddress={selectedAddress} />
+				<Dashboard selectedAddress={selectedAddress} placesOfInterest={placesOfInterest} />
 			</div>
 		</div>
 	) : (

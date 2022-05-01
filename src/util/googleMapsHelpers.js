@@ -27,11 +27,13 @@ export function parseNearbySearchResults(results) {
 			place_id,
 			photos,
 			icon,
-			icon_mask_base_uri
+			icon_mask_base_uri,
+			geometry
 		} = res;
 		const imageUrl = photos ? photos[0].getUrl() : null;
 		const url = `https://www.google.com/maps/place/?q=place_id:${place_id}`;
 		const iconNonColored = `${icon_mask_base_uri}.svg`;
+		const coords = { lat: geometry.location.lat(), lng: geometry.location.lng() };
 		return {
 			name,
 			place_id,
@@ -44,7 +46,8 @@ export function parseNearbySearchResults(results) {
 			imageUrl,
 			icon,
 			iconNonColored,
-			url
+			url,
+			coords
 		};
 	});
 }

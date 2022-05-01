@@ -38,6 +38,7 @@ function SearchBar({ setSelectedAddress }) {
 
 		// pan to address on map
 		map.panTo(latlng);
+		map.setZoom(14);
 	};
 
 	return (

@@ -5,21 +5,19 @@ import SubDashboard from './SubDashboard';
 
 import './Dashboard.css';
 
-import { importNearbyPlaceSampleData } from '../data/testData';
-
-const PLACE_TYPES = [ 'cafe', 'restaurant', 'bar' ];
-const testData = importNearbyPlaceSampleData();
-
-function Dashboard({ selectedAddress }) {
-	const subDashboards = PLACE_TYPES.slice(0, 3).flat().map((p) => {
-		console.log(p);
-		if (!testData[p]) return;
-		return <SubDashboard key={p} placeType={p} items={testData[p]} />;
-	});
+function Dashboard({ selectedAddress, placesOfInterest }) {
+	const subDashboards = !placesOfInterest
+		? null
+		: Object.entries(placesOfInterest).map(([ placeType, places ]) => {
+				if (!places) return;
+				return <SubDashboard key={placeType} placeType={placeType} items={places} />;
+			});
 
 	return (
 		<div className="Dashboard">
-			<div className="Dashboard-heading">Dashboard for {`${selectedAddress?.address}`}</div>
+			{selectedAddress && (
+				<div className="Dashboard-heading">{`${selectedAddress.address}`}</div>
+			)}
 			<div className="Dashboard-container">{subDashboards}</div>
 		</div>
 	);
