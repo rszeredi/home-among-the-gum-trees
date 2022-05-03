@@ -125,7 +125,14 @@ function Map({
 				};
 
 				markers.push(
-					<Marker position={coords} key={`${place_id}`} onClick={handleMarkerClick} />
+					<Marker position={coords} key={`${place_id}`} onClick={handleMarkerClick} 
+					// label={{
+					// 		text: '\ue88a',
+					// 		fontFamily: 'Material Icons',
+					// 		color: '#ffffff',
+					// 		fontSize: '18px'
+					// 	}}
+						/>
 				);
 				existingMarkers.add(place_id);
 			}
@@ -170,12 +177,6 @@ function Map({
 					<Marker
 						position={selectedAddress}
 						shape={shape}
-						// label={{
-						// 	text: '\ue88a',
-						// 	fontFamily: 'Material Icons',
-						// 	color: '#ffffff',
-						// 	fontSize: '18px'
-						// }}
 						icon={{
 							url: '/favicon.ico',
 							// url:,

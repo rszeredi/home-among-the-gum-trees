@@ -35,10 +35,12 @@ function SubDashboard({ placeType, items, setInfoWindowPlace }) {
 }
 
 function getImageUrl(realImageUrl, place_type, idx) {
-	if (process.env.NODE_ENV === 'development') {
+	if (process.env.NODE_ENV !== 'development' || process.env.REACT_APP_OVERRIDE_ENV === 'prod')
+		return realImageUrl;
+	else {
 		const imageCandidates = placeholderImageUrls[place_type];
 		return imageCandidates[idx % 3];
-	} else return realImageUrl;
+	}
 }
 
 function Place({ item, placeType, setInfoWindowPlace, idx }) {

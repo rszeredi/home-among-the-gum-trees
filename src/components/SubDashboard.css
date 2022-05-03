@@ -18,13 +18,18 @@
   padding: 10px;
   color: #fff;
   text-decoration: none;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .SubDashboard-place:hover {
   background-color: darkgray;
-  color: black;
+  color: #0f1114;
+}
+
+.SubDashboard-place-image-container {
+  width: 80px;
+  height: 80px;
 }
 
 .SubDashboard-place-image-container img {

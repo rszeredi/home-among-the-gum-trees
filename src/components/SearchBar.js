@@ -9,19 +9,31 @@ import '@reach/combobox/styles.css';
 import React, { useEffect } from 'react';
 import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
 import { useGoogleMap } from '@react-google-maps/api';
+import { MELBOURNE_LAT_LNG } from '../util/googleMapsHelpers';
 
 import './SearchBar.css';
 
 function SearchBar({ setSelectedAddress }) {
 	const map = useGoogleMap();
 
+	const melbourneLatLng = new window.google.maps.LatLng(
+		MELBOURNE_LAT_LNG.lat,
+		MELBOURNE_LAT_LNG.lng
+	);
 	const {
 		ready,
 		value,
 		setValue,
 		suggestions: { status, data },
 		clearSuggestions
-	} = usePlacesAutocomplete();
+	} = usePlacesAutocomplete({
+		requestOptions: {
+			location: melbourneLatLng,
+			radius: 15000,
+			componentRestrictions: { country: 'AU' },
+			strictBounds: true
+		}
+	});
 	useEffect(() => {
 		if (process.env.NODE_ENV === 'development') {
 			setValue(process.env.REACT_APP_BERYL_ADDRESS || '');

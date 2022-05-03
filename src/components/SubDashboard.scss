@@ -18,8 +18,13 @@
 
 	&:hover {
 		background-color: darkgray;
-		color: $darkBackgroundColor;
+		color: $darkBackground;
 	}
+}
+
+.SubDashboard-place-image-container {
+	width: 80px;
+	height: 80px;
 }
 
 .SubDashboard-place-image-container img {
