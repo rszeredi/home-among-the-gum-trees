@@ -11,14 +11,15 @@
 	@include flexCenterRowJustifyStart();
 	gap: 20px;
 	padding: 10px;
-	color: $lightTextColor;
+	color: $darkTextColor;
 	text-decoration: none;
 
 	transition: background-color 0.2s, color 0.2s;
+	cursor: pointer;
 
 	&:hover {
-		background-color: darkgray;
-		color: $darkBackground;
+		background-color: $darkBackgroundColor;
+		color: $lightTextColor;
 	}
 }
 
@@ -44,4 +45,13 @@
 .SubDashboard-place-info-heading {
 	font-weight: bold;
 	font-size: 1rem;
+}
+
+.SubDashboard-place-info-stars i.star-empty {
+	color: lightgray;
+}
+
+.SubDashboard-place-info-stars i.star-full,
+.SubDashboard-place-info-stars i.star-half {
+	color: gold;
 }

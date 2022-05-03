@@ -16,15 +16,16 @@
           justify-content: flex-start;
   gap: 20px;
   padding: 10px;
-  color: #fff;
+  color: #0f1114;
   text-decoration: none;
   -webkit-transition: background-color 0.2s, color 0.2s;
   transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
 }
 
 .SubDashboard-place:hover {
-  background-color: darkgray;
-  color: #0f1114;
+  background-color: rgba(13, 22, 36, 0.833);
+  color: #f0f3f4;
 }
 
 .SubDashboard-place-image-container {
@@ -55,5 +56,14 @@
 .SubDashboard-place-info-heading {
   font-weight: bold;
   font-size: 1rem;
+}
+
+.SubDashboard-place-info-stars i.star-empty {
+  color: lightgray;
+}
+
+.SubDashboard-place-info-stars i.star-full,
+.SubDashboard-place-info-stars i.star-half {
+  color: gold;
 }
 /*# sourceMappingURL=SubDashboard.css.map */

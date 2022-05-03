@@ -28,6 +28,7 @@ const mapOptions = {
 // const PLACE_TYPES = [ 'cafe', 'restaurant', 'bar', 'gym', 'park', 'supermarket', 'bakery' ];
 // const PLACE_TYPES = [ 'cafe', 'restaurant' ];
 const PLACE_TYPES = [
+	'restaurant',
 	'bar',
 	'gym',
 	'park',

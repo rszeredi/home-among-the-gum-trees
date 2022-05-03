@@ -45,12 +45,19 @@ function getImageUrl(realImageUrl, place_type, idx) {
 
 function Place({ item, placeType, setInfoWindowPlace, idx }) {
 	const { name, imageUrl, rating, user_ratings_total, vicinity, price_level, url, coords } = item;
-	const ratings_count_string = user_ratings_total ? `(${user_ratings_total})` : '';
+	const ratingsCountDisplay = user_ratings_total || 0;
+	const ratingDisplay = `${(rating || 0).toFixed(1)}`;
+
 	const imageUrlDisplay = getImageUrl(imageUrl, placeType, idx);
 
 	const handleClick = () => {
 		setInfoWindowPlace(item);
 	};
+
+	const starRatings = Array.from({ length: 5 }).map((_) => (
+		<i class="fa-solid fa-star-half-stroke" />
+	));
+	// const starRatings = Array.from({ length: 5 }).map((_) => <i class="fa fa-solid fa-star" />);
 	return (
 		// <a href={url} target="_blank" className="SubDashboard-place">
 		<div className="SubDashboard-place" onClick={handleClick}>
@@ -60,14 +67,35 @@ function Place({ item, placeType, setInfoWindowPlace, idx }) {
 			<div className="SubDashboard-place-info">
 				<div className="SubDashboard-place-info-heading">{name}</div>
 				<div>
-					<span>{rating} </span>
-					<span>{ratings_count_string} </span>
+					<span>{ratingDisplay} </span>
+					<span className="SubDashboard-place-info-stars">
+						{ratingToStars(rating || 0)}{' '}
+					</span>
+					<span>{`(${ratingsCountDisplay})`} </span>
 					<span>{'$'.repeat(price_level)}</span>
 				</div>
 				<div>{vicinity}</div>
 			</div>
 		</div>
 		// </a>
+	);
+}
+
+function starsToSpan(number, icon) {
+	return Array.from({ length: number }).map((_, idx) => <i className={icon} key={idx} />);
+}
+
+function ratingToStars(rating) {
+	const fullStars = Math.floor(rating);
+	const remainder = rating - fullStars;
+	const halfStars = remainder > 0.2 ? 1 : 0;
+	const emptyStars = 5 - fullStars - halfStars;
+	return (
+		<span>
+			{starsToSpan(fullStars, 'fa fa-solid fa-star star-full')}
+			{starsToSpan(halfStars, 'fa-solid fa-star-half-stroke star-half')}
+			{starsToSpan(emptyStars, 'fa-regular fa-star star-empty')}
+		</span>
 	);
 }
 
