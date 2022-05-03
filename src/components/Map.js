@@ -13,7 +13,7 @@ import constants from '../util/constants';
 
 import './Map.css';
 
-const { NUM_PLACES_PER_PLACE_TYPE } = constants;
+const { NUM_PLACES_PER_PLACE_TYPE, PLACE_TYPES } = constants;
 
 const containerStyle = {
 	// width: '100%'
@@ -28,16 +28,6 @@ const mapOptions = {
 };
 // const PLACE_TYPES = [ 'cafe', 'restaurant', 'bar', 'gym', 'park', 'supermarket', 'bakery' ];
 // const PLACE_TYPES = [ 'cafe', 'restaurant' ];
-const PLACE_TYPES = [
-	'restaurant',
-	'bar',
-	'gym',
-	'park',
-	'supermarket',
-	'bakery',
-	'transit_station',
-	'train_station'
-];
 
 function Map({
 	selectedAddress,

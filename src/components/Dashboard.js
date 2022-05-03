@@ -5,10 +5,14 @@ import SubDashboard from './SubDashboard';
 
 import './Dashboard.css';
 
+import constants from '../util/constants';
+const { PLACE_TYPES } = constants;
+
 function Dashboard({ selectedAddress, placesOfInterest, setInfoWindowPlace }) {
 	const subDashboards = !placesOfInterest
 		? null
-		: Object.entries(placesOfInterest).map(([ placeType, places ]) => {
+		: PLACE_TYPES.map((placeType) => {
+				const places = placesOfInterest[placeType];
 				if (!places) return;
 				return (
 					<SubDashboard

@@ -4,9 +4,10 @@ import './SubDashboard.css';
 
 import { placeholderImageUrls } from '../data/testData';
 
-function pluralizePlaceType(placeType) {
+function convertToDisplayName(placeType) {
 	if (placeType === 'bakery') return 'bakeries';
-	else return placeType + 's';
+	if (placeType === 'transit_station') return 'Tram/Bus Stops';
+	else return placeType.replace('_', ' ') + 's';
 }
 
 function addMapKeyToImageUrl(imageUrl) {
@@ -26,9 +27,7 @@ function SubDashboard({ placeType, items, setInfoWindowPlace }) {
 	));
 	return (
 		<div className="SubDashboard">
-			<h4 className="SubDashboard-heading">
-				{pluralizePlaceType(placeType.replace('_', ' '))}
-			</h4>
+			<h4 className="SubDashboard-heading">{convertToDisplayName(placeType)}</h4>
 			{itemRows}
 		</div>
 	);
