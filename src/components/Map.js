@@ -23,6 +23,7 @@ const containerStyle = {
 const mapOptions = {
 	mapId: process.env.REACT_APP_MAP_ID,
 	disableDefaultUI: true,
+	zoomControl: true,
 	streetViewControl: true
 };
 // const PLACE_TYPES = [ 'cafe', 'restaurant', 'bar', 'gym', 'park', 'supermarket', 'bakery' ];
