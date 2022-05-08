@@ -18,7 +18,10 @@ The app is a tool for evaluating the neighbourhood of a given property. The user
 - HTML, CSS, Sass, Javascript
   
 ## Demo
-TODO
+[![Home Among the Gum Trees Demo!](https://img.youtube.com/vi/ayhjH3wpiy8/0.jpg)](https://youtu.be/ayhjH3wpiy8)
+  
+  
+
   
 ## Project Status
 - The first version is complete
