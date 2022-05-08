@@ -55,7 +55,7 @@ function Map({
 			if (!placesService || !selectedAddress) return;
 			// const infowindow = new window.google.maps.InfoWindow();
 			console.log('selectedAddress', selectedAddress);
-			console.log('addressComponents', JSON.stringify(selectedAddress.addressComponents));
+			// console.log('addressComponents', JSON.stringify(selectedAddress.addressComponents));
 
 			// empty the current places of interest
 			setPlacesOfInterest({});
@@ -74,7 +74,7 @@ function Map({
 				console.log('Searching placeType: ', placeType);
 
 				const resultsParsed = parseNearbySearchResults(results);
-				console.log('results::', results);
+				// console.log('results::', results);
 				// console.log('results', JSON.stringify(parseNearbySearchResults(results, true)));
 				const selectedPlaces = selectTopRated(resultsParsed, NUM_PLACES_PER_PLACE_TYPE);
 				setPlacesOfInterest((prevPlacesOfInterest) => ({
@@ -179,8 +179,12 @@ function Map({
 
 	const goToRealEstatePage = () => {
 		const realEstateUrl = create_property_url(selectedAddress.addressComponents);
-		console.log('will goToRealEstatePage:', realEstateUrl);
-		window.open(realEstateUrl, '_blank', 'noreferrer').focus();
+		if (realEstateUrl) {
+			console.log('will goToRealEstatePage:', realEstateUrl);
+			window.open(realEstateUrl, '_blank', 'noreferrer');
+		} else {
+			console.log('Cannot construct URL');
+		}
 	};
 
 	return (

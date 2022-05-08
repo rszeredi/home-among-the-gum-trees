@@ -86,8 +86,6 @@ function get_hyphenated_address({
 	administrative_area_level_1,
 	country
 }) {
-	if (country !== 'AU') return null; // only for realestate.com.au
-
 	const { street_name, streettype, streettype_suffix } = parse_street_address_parts(route);
 
 	// replace street with st etc.
@@ -106,13 +104,37 @@ function get_hyphenated_address({
 	console.log('transformed_street_address', transformed_street_address);
 	const suburb_str = locality.replaceAll(' ', '-').toLowerCase();
 
-	const full_address_str = `${transformed_street_address}-${suburb_str}-vic-${postal_code}`;
+	const full_address_str = `${transformed_street_address}-${suburb_str}-${administrative_area_level_1.toLowerCase()}-${postal_code}`;
 	return full_address_str;
 }
 
-export function create_property_url(address_components) {
-	console.log('address_components1', address_components);
-	const full_address_str = get_hyphenated_address(address_components);
+export function create_property_url({
+	subpremise,
+	street_number,
+	route,
+	locality,
+	postal_code,
+	administrative_area_level_1,
+	country
+}) {
+	if (
+		country !== 'AU' || // only for realestate.com.au
+		!street_number ||
+		!route ||
+		!locality ||
+		!postal_code ||
+		!administrative_area_level_1
+	)
+		return null;
+	const full_address_str = get_hyphenated_address({
+		subpremise,
+		street_number,
+		route,
+		locality,
+		postal_code,
+		administrative_area_level_1,
+		country
+	});
 
 	return `https://www.realestate.com.au/property/${full_address_str}`;
 }
