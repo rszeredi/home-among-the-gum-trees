@@ -169,6 +169,11 @@ function Map({
 		cursor: 'grab'
 	};
 
+	const recenterAtAddress = () => {
+		mapRef.current.setCenter(selectedAddress);
+		mapRef.current.setZoom(14);
+	};
+
 	return (
 		<div>
 			<GoogleMap
@@ -233,6 +238,9 @@ function Map({
 					</InfoWindow>
 				)}
 				<SearchBar setSelectedAddress={setSelectedAddress} />
+				<div className="Map-center-btn" onClick={recenterAtAddress}>
+					<i className="fa-solid fa-location-crosshairs" />
+				</div>
 			</GoogleMap>
 		</div>
 	);
