@@ -6,7 +6,7 @@
 	// min-width: 300px;
 	width: 35px;
 
-	transition: width 0.3s;
+	transition: width 0.5s;
 	transition: top 0.5s, left 0.5s, transform 0.5s;
 	width: 80%;
 
@@ -18,7 +18,15 @@
 .SearchBar-center {
 	top: 50%;
 	left: 50%;
-	transform: translate(-40%, -200px);
+	transform: translate(-30%, -200px);
+
+	@media (max-width: 1400px) {
+		transform: translate(-40%, -200px);
+	}
+
+	@media (max-width: 400px) {
+		transform: translate(-50%, -100px);
+	}
 }
 
 .SearchBar-topLeft {
@@ -42,7 +50,17 @@
 
 .SearchBar-input-center {
 	font-size: 1.6rem;
-	width: 80%;
+	width: 60%;
+
+	@media (max-width: 1400px) {
+		width: 80%;
+		font-size: 1.2rem;
+	}
+
+	@media (max-width: 400px) {
+		width: 96%;
+		font-size: 1rem;
+	}
 }
 
 .SearchBar-input-topLeft {
