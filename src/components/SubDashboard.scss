@@ -7,6 +7,10 @@
 	border-bottom: 1px solid gray;
 }
 
+.SubDashboard-empty-results {
+	padding: 10px;
+}
+
 .SubDashboard-place {
 	@include flexCenterRowJustifyStart();
 	gap: 20px;

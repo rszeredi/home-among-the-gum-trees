@@ -4,6 +4,10 @@
   border-bottom: 1px solid gray;
 }
 
+.SubDashboard-empty-results {
+  padding: 10px;
+}
+
 .SubDashboard-place {
   display: -webkit-box;
   display: -ms-flexbox;

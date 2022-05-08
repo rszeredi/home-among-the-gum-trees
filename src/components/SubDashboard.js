@@ -22,7 +22,11 @@ function SubDashboard({ placeType, items, setInfoWindowPlace }) {
 	return (
 		<div className="SubDashboard">
 			<h4 className="SubDashboard-heading">{convertToDisplayName(placeType)}</h4>
-			{itemRows}
+			{items.length > 0 ? (
+				itemRows
+			) : (
+				<div className="SubDashboard-empty-results">No results to display.</div>
+			)}
 		</div>
 	);
 }
