@@ -1,6 +1,11 @@
 @import '../styles/variables';
 @import '../styles/common';
 
+.Map-container {
+	height: 100%;
+	width: 100%;
+}
+
 .Map-infowindow {
 	color: $darkTextColor;
 	font-family: Sora;

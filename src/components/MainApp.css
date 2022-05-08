@@ -2,12 +2,29 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	width: 100vw;
 }
 
 .MainApp-map {
 	width: 50%;
+	height: 100%;
 }
 
 .MainApp-dashboard {
 	width: 50%;
+}
+
+@media (max-width: 700px) {
+	.MainApp {
+		flex-direction: column;
+	}
+
+	.MainApp-map {
+		width: 100%;
+		height: 50vh;
+	}
+
+	.MainApp-dashboard {
+		width: 100%;
+	}
 }

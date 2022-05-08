@@ -17,9 +17,10 @@ import './Map.css';
 
 const { NUM_PLACES_PER_PLACE_TYPE, PLACE_TYPES, PLACE_TYPE_MARKER_COLORS } = constants;
 
+const verticalLayout = window.matchMedia('(max-width: 700px)').matches;
 const containerStyle = {
-	// width: '100%'
-	height: '100vh'
+	// width: verticalLayout ? '100%' : '50%',
+	height: verticalLayout ? '50vh' : '100vh'
 };
 
 const mapOptions = {
@@ -188,7 +189,7 @@ function Map({
 	};
 
 	return (
-		<div>
+		<div className="Map-container">
 			<GoogleMap
 				mapContainerStyle={containerStyle}
 				center={MELBOURNE_LAT_LNG}
