@@ -16,7 +16,7 @@ function SubDashboard({ placeType, items, setInfoWindowPlace }) {
 			item={item}
 			placeType={placeType}
 			setInfoWindowPlace={setInfoWindowPlace}
-			idx={idx}
+			idxForFakeImage={idx}
 		/>
 	));
 	return (

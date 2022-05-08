@@ -6,22 +6,27 @@ import './SubDashboard.css';
 
 const { PLACE_TYPE_ICONS } = constants;
 
-function Place({ item, placeType, setInfoWindowPlace, idx }) {
+function Place({ item, placeType, displayType, setInfoWindowPlace, idxForFakeImage }) {
 	const { name, imageUrl, rating, user_ratings_total, vicinity, price_level, url, coords } = item;
 	const ratingsCountDisplay = user_ratings_total || 0;
 	const ratingDisplay = `${(rating || 0).toFixed(1)}`;
 
 	const imageOrIconDisplay = imageUrl
-		? getImageUrl(imageUrl, placeType, idx)
+		? getImageUrl(imageUrl, placeType, idxForFakeImage)
 		: getPlaceTypeIconDisplay(placeType);
 
 	const handleClick = () => {
-		setInfoWindowPlace(item);
+		if (displayType !== 'InfoWindow')
+			setInfoWindowPlace({ ...item, placeType, idxForFakeImage });
 	};
 
 	return (
 		// <a href={url} target="_blank" className="SubDashboard-place">
-		<div className="SubDashboard-place" onClick={handleClick}>
+		<div
+			className={` SubDashboard-place ${displayType !== 'InfoWindow' &&
+				'SubDashboard-place-dashboard'}`}
+			onClick={handleClick}
+		>
 			<div className="SubDashboard-place-image-container">{imageOrIconDisplay}</div>
 			<div className="SubDashboard-place-info">
 				<div className="SubDashboard-place-info-heading">{name}</div>
@@ -69,7 +74,7 @@ function getImageUrl(realImageUrl, place_type, idx) {
 		imageUrlDisplay = realImageUrl;
 	else {
 		const imageCandidates = placeholderImageUrls[place_type];
-		imageUrlDisplay = imageCandidates[idx % 3];
+		imageUrlDisplay = imageCandidates[idx ? idx % 3 : 0];
 	}
 
 	return <img src={imageUrlDisplay} alt="Place Image" />;
@@ -78,7 +83,7 @@ function getImageUrl(realImageUrl, place_type, idx) {
 function getPlaceTypeIconDisplay(placeType) {
 	return (
 		<div className="SubDashboard-place-icon-container SubDashboard-place-icon">
-			{<i class={`${PLACE_TYPE_ICONS[placeType]}`} />}
+			{<i className={`${PLACE_TYPE_ICONS[placeType]}`} />}
 		</div>
 	);
 }

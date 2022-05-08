@@ -23,7 +23,7 @@
   cursor: pointer;
 }
 
-.SubDashboard-place:hover {
+.SubDashboard-place-dashboard:hover {
   background-color: rgba(13, 22, 36, 0.833);
   color: #f0f3f4;
 }

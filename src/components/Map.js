@@ -1,7 +1,8 @@
-import { GoogleMap, Marker, InfoWindow, Circle } from '@react-google-maps/api';
 import React, { useState, useEffect, useCallback, useRef, Fragment } from 'react';
+import { GoogleMap, Marker, InfoWindow, Circle } from '@react-google-maps/api';
 
 import SearchBar from './SearchBar';
+import Place from './Place';
 
 import {
 	parseNearbySearchResults,
@@ -111,7 +112,7 @@ function Map({
 
 				const handleMarkerClick = () => {
 					console.log('PLACE:', place);
-					setInfoWindowPlace(place);
+					setInfoWindowPlace({ ...place, placeType });
 				};
 
 				const marker_color = PLACE_TYPE_MARKER_COLORS[placeType];
@@ -188,8 +189,18 @@ function Map({
 						onCloseClick={handleCloseInfoWindow}
 					>
 						<div className="Map-infowindow">
-							<a href={infoWindowPlace.url} target="_blank">
+							{/* <a href={infoWindowPlace.url} target="_blank">
 								<h3>{infoWindowPlace.name}</h3>
+							</a> */}
+							<a href={infoWindowPlace.url} target="_blank">
+								<Place
+									key={infoWindowPlace.place_id}
+									item={infoWindowPlace}
+									displayType="InfoWindow"
+									placeType={infoWindowPlace.placeType}
+									setInfoWindowPlace={setInfoWindowPlace}
+									idxForFakeImage={infoWindowPlace.idxForFakeImage}
+								/>
 							</a>
 						</div>
 					</InfoWindow>

@@ -16,11 +16,11 @@
 
 	transition: background-color 0.2s, color 0.2s;
 	cursor: pointer;
+}
 
-	&:hover {
-		background-color: $darkBackgroundColor;
-		color: $lightTextColor;
-	}
+.SubDashboard-place-dashboard:hover {
+	background-color: $darkBackgroundColor;
+	color: $lightTextColor;
 }
 
 .SubDashboard-place-icon-container {
