@@ -20,7 +20,7 @@ The app is a tool for evaluating the neighbourhood of a given property. The user
 - HTML, CSS, Sass, Javascript
   
 ## Demo
-<a href="https://youtu.be/ayhjH3wpiy8" target="_blank">
+<a href="https://drive.google.com/file/d/1xKS_cXJm2Xr4hw_pm0mbBXY0xLOmu58C/view?usp=sharing" target="_blank">
   <img src="https://img.youtube.com/vi/ayhjH3wpiy8/0.jpg" alt="Home Among the Gum Trees Demo!" />
 </a> 
   
