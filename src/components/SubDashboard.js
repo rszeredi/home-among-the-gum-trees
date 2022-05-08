@@ -53,10 +53,6 @@ function Place({ item, placeType, setInfoWindowPlace, idx }) {
 		setInfoWindowPlace(item);
 	};
 
-	const starRatings = Array.from({ length: 5 }).map((_) => (
-		<i class="fa-solid fa-star-half-stroke" />
-	));
-	// const starRatings = Array.from({ length: 5 }).map((_) => <i class="fa fa-solid fa-star" />);
 	return (
 		// <a href={url} target="_blank" className="SubDashboard-place">
 		<div className="SubDashboard-place" onClick={handleClick}>
