@@ -30,7 +30,12 @@ function MainApp() {
 					setInfoWindowPlace={setInfoWindowPlace}
 				/>
 			</div>
-			<div className="MainApp-dashboard">
+			<div
+				className={
+					'MainApp-dashboard ' +
+					(selectedAddress ? 'MainApp-dashboard-visible' : 'MainApp-dashboard-hidden')
+				}
+			>
 				<Dashboard
 					selectedAddress={selectedAddress}
 					placesOfInterest={placesOfInterest}

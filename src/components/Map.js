@@ -17,12 +17,6 @@ import './Map.css';
 
 const { NUM_PLACES_PER_PLACE_TYPE, PLACE_TYPES, PLACE_TYPE_MARKER_COLORS } = constants;
 
-const verticalLayout = window.matchMedia('(max-width: 700px)').matches;
-const containerStyle = {
-	// width: verticalLayout ? '100%' : '50%',
-	height: verticalLayout ? '50vh' : '100vh'
-};
-
 const mapOptions = {
 	mapId: process.env.REACT_APP_MAP_ID,
 	disableDefaultUI: true,
@@ -41,6 +35,14 @@ function Map({
 	const [ placesService, setPlacesService ] = useState(null);
 	const [ markers, setMarkers ] = useState([]);
 	const mapRef = useRef();
+
+	const verticalLayout = window.matchMedia('(max-width: 700px)').matches;
+	const containerStyle = {
+		// width: verticalLayout ? '100%' : '50%',
+		width: '100%',
+		height: verticalLayout ? '50vh' : '100vh'
+	};
+	console.log('verticalLayout', verticalLayout);
 
 	const onMapLoad = useCallback((map) => {
 		// initialize places service
@@ -78,10 +80,12 @@ function Map({
 				// console.log('results::', results);
 				// console.log('results', JSON.stringify(parseNearbySearchResults(results, true)));
 				const selectedPlaces = selectTopRated(resultsParsed, NUM_PLACES_PER_PLACE_TYPE);
-				setPlacesOfInterest((prevPlacesOfInterest) => ({
-					...prevPlacesOfInterest,
-					[placeType]: selectedPlaces
-				}));
+				setTimeout(() => {
+					setPlacesOfInterest((prevPlacesOfInterest) => ({
+						...prevPlacesOfInterest,
+						[placeType]: selectedPlaces
+					}));
+				}, 1000);
 				// if (status == window.google.maps.places.PlacesServiceStatus.OK)
 			};
 
@@ -97,7 +101,9 @@ function Map({
 				});
 			} else {
 				const testData = importNearbyPlaceSampleData(NUM_PLACES_PER_PLACE_TYPE);
-				setPlacesOfInterest(testData);
+				setTimeout(() => {
+					setPlacesOfInterest(testData);
+				}, 1000);
 			}
 		},
 		[ selectedAddress ]
@@ -252,7 +258,10 @@ function Map({
 						</div>
 					</InfoWindow>
 				)}
-				<SearchBar setSelectedAddress={setSelectedAddress} />
+				<SearchBar
+					setSelectedAddress={setSelectedAddress}
+					selectedAddress={selectedAddress}
+				/>
 				<div className="Map-center-btn" onClick={recenterAtAddress}>
 					<i className="fa-solid fa-location-crosshairs" />
 				</div>

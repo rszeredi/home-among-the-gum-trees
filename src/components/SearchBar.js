@@ -13,7 +13,7 @@ import { MELBOURNE_LAT_LNG } from '../util/googleMapsHelpers';
 
 import './SearchBar.css';
 
-function SearchBar({ setSelectedAddress }) {
+function SearchBar({ setSelectedAddress, selectedAddress }) {
 	const map = useGoogleMap();
 
 	const melbourneLatLng = new window.google.maps.LatLng(
@@ -62,15 +62,24 @@ function SearchBar({ setSelectedAddress }) {
 		map.setZoom(14);
 	};
 
+	const placeholderText = `🔍 Search for an address (eg. ${process.env
+		.REACT_APP_PLACEHOLDER_ADDERSS})`;
+
 	return (
-		<div className="SearchBar" style={{ minWidth: value ? '80%' : '35px' }}>
+		<div
+			className={'SearchBar ' + (!selectedAddress ? 'SearchBar-center' : 'SearchBar-topLeft')}
+			style={{ minWidth: value ? '80%' : '35px' }}
+		>
 			<Combobox onSelect={handleSelect}>
 				<ComboboxInput
 					value={value}
 					onChange={handleSearchChange}
 					disabled={!ready}
-					className="SearchBar-input"
-					placeholder="🔍"
+					className={
+						'SearchBar-input ' +
+						(!selectedAddress ? 'SearchBar-input-center' : 'SearchBar-input-topLeft')
+					}
+					placeholder={placeholderText}
 				/>
 				<ComboboxPopover>
 					<ComboboxList className="SearchBar-dropdown">
