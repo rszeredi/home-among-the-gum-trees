@@ -52,7 +52,10 @@ function SearchBar({ setSelectedAddress }) {
 		// covert to coords
 		const results = await getGeocode({ address });
 		const latlng = await getLatLng(results[0]);
-		setSelectedAddress({ address, ...latlng });
+		const addressComponents = Object.fromEntries(
+			results[0].address_components.map((ac) => [ ac.types[0], ac.short_name ])
+		);
+		setSelectedAddress({ address, ...latlng, addressComponents });
 
 		// pan to address on map
 		map.panTo(latlng);

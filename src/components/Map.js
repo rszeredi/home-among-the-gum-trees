@@ -11,6 +11,7 @@ import {
 } from '../util/googleMapsHelpers';
 import { importNearbyPlaceSampleData } from '../data/testData';
 import constants from '../util/constants';
+import { create_property_url } from '../util/addressUrlUtil';
 
 import './Map.css';
 
@@ -53,6 +54,8 @@ function Map({
 		() => {
 			if (!placesService || !selectedAddress) return;
 			// const infowindow = new window.google.maps.InfoWindow();
+			console.log('selectedAddress', selectedAddress);
+			console.log('addressComponents', JSON.stringify(selectedAddress.addressComponents));
 
 			// empty the current places of interest
 			setPlacesOfInterest({});
@@ -174,6 +177,12 @@ function Map({
 		mapRef.current.setZoom(14);
 	};
 
+	const goToRealEstatePage = () => {
+		const realEstateUrl = create_property_url(selectedAddress.addressComponents);
+		console.log('will goToRealEstatePage:', realEstateUrl);
+		window.open(realEstateUrl, '_blank', 'noreferrer').focus();
+	};
+
 	return (
 		<div>
 			<GoogleMap
@@ -210,6 +219,7 @@ function Map({
 								anchor: new window.google.maps.Point(17, 46),
 								scaledSize: new window.google.maps.Size(37, 37)
 							}}
+							onClick={goToRealEstatePage}
 						/>
 					</Fragment>
 				)}
