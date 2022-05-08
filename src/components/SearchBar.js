@@ -62,8 +62,7 @@ function SearchBar({ setSelectedAddress, selectedAddress }) {
 		map.setZoom(14);
 	};
 
-	const placeholderText = `🔍 Search for an address (eg. ${process.env
-		.REACT_APP_PLACEHOLDER_ADDERSS})`;
+	const placeholderText = `🔍 Search for an address (eg. 47 Lansell Road Toorak)`;
 
 	return (
 		<div
