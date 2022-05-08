@@ -4,7 +4,9 @@ Home Among the Gum Trees
 <div style="margin: 200px;">
   
 [🔗 Try out the app here!](https://home-among-the-gum-trees.vercel.app/)  
-Note: this app is optimized for Melbourne, Australia. If you don't know any addresses, try: [47 Lansell Rd, Toorak](https://www.abc.net.au/news/2021-10-14/toorak-mansion-house-sale-auction-record-melbourne/100538138)
+
+Note: this app is optimized for Melbourne, Australia (though it will still work for addresses outside Australia).  
+If you don't know any Melbourne addresses, try: [47 Lansell Rd, Toorak](https://www.abc.net.au/news/2021-10-14/toorak-mansion-house-sale-auction-record-melbourne/100538138)
   
 ## About this project
 This app is built for my friends and family at home searching for properties in Melbourne, Australia. It uses the Google Maps API.
