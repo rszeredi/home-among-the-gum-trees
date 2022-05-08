@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+<h1 align="left">
+Home Among the Gum Trees
+</h1>
+<div style="margin: 200px;">
+  
+[🔗 Try out the app here!](https://home-among-the-gum-trees.vercel.app/)  
+Note: this app is optimized for Melbourne, Australia. If you don't know any addresses, try: [47 Lansell Rd, Toorak](https://www.abc.net.au/news/2021-10-14/toorak-mansion-house-sale-auction-record-melbourne/100538138)
+  
+## About this project
+This app is built for my friends and family at home searching for properties in Melbourne, Australia. It uses the Google Maps API.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### About the app
+The app is a tool for evaluating the neighbourhood of a given property. The user searches for an address and chooses from a set of suggestions. The app then displays the top 3 places across several categories (eg. restaurant, cafe, park etc.) within 1km of the selected address. Clicking on the house marker link takes the user to realestate.com.au where they can view details about the property, such as sale prices and land size.
+  
+## Techonologies Used
+- [Google Maps API](https://developers.google.com/maps/documentation/javascript): Map display, Markers, Places Autocomplete, Nearby Search
+- React Hooks
+- HTML, CSS, Sass, Javascript
+  
+## Demo
+TODO
+  
+## Project Status
+- The first version is complete
+- I plan to add the following features in future versions:
+    - Display property information on the page (eg. most recent sale price, land area)
+    - Store history of previously searched addresses
+    - Allow user to specify radius (currently it's 1km)
+    - Allow user to select an address by (right-)clicking on the map
+    - Sort train/tram stations by proximity instead of rating
+    - Display walking distance for each place (using the Google Maps Directions Service)
+ 
