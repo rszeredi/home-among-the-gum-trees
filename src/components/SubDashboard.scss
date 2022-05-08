@@ -23,16 +23,26 @@
 	}
 }
 
+.SubDashboard-place-icon-container {
+	width: $dashboardImageSize;
+	height: $dashboardImageSize;
+	border: 1.2px solid rgb(116, 114, 114);
+	border-radius: $dashboardImageBorderRadius;
+	font-size: 1.6rem;
+	background-color: rgb(210, 209, 209);
+	@include flexCenterRowCenter();
+}
+
 .SubDashboard-place-image-container {
-	width: 80px;
-	height: 80px;
+	width: $dashboardImageSize;
+	height: $dashboardImageSize;
 }
 
 .SubDashboard-place-image-container img {
-	width: 80px;
-	height: 80px;
+	width: $dashboardImageSize;
+	height: $dashboardImageSize;
 	object-fit: cover;
-	border-radius: 20%;
+	border-radius: $dashboardImageBorderRadius;
 }
 
 .SubDashboard-place-info {

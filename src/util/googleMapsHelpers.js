@@ -63,3 +63,20 @@ export function selectTopRated(results, topK) {
 	const resultsSorted = results.sort((x, y) => y.rating - x.rating);
 	return resultsSorted.slice(0, topK);
 }
+
+// //temp
+// service.getDetails({ placeId: 'ChIJT-0oULFB1moRHfywNgnQ07o' }, function(place, status) {
+// 	if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+// 		if (place) {
+// 			console.log('place1 tram:::', place);
+// 		}
+// 	}
+// });
+
+// service.getDetails({ placeId: 'ChIJ1WzOWOdB1moRuB2G1g8x3SA' }, function(place, status) {
+// 	if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+// 		if (place) {
+// 			console.log('place2 bus:::', place);
+// 		}
+// 	}
+// });

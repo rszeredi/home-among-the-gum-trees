@@ -3,6 +3,9 @@ import React from 'react';
 import './SubDashboard.css';
 
 import { placeholderImageUrls } from '../data/testData';
+import constants from '../util/constants';
+
+const { PLACE_TYPE_ICONS } = constants;
 
 function convertToDisplayName(placeType) {
 	if (placeType === 'bakery') return 'bakeries';
@@ -34,12 +37,23 @@ function SubDashboard({ placeType, items, setInfoWindowPlace }) {
 }
 
 function getImageUrl(realImageUrl, place_type, idx) {
+	let imageUrlDisplay;
 	if (process.env.NODE_ENV !== 'development' || process.env.REACT_APP_OVERRIDE_ENV === 'prod')
-		return realImageUrl;
+		imageUrlDisplay = realImageUrl;
 	else {
 		const imageCandidates = placeholderImageUrls[place_type];
-		return imageCandidates[idx % 3];
+		imageUrlDisplay = imageCandidates[idx % 3];
 	}
+
+	return <img src={imageUrlDisplay} alt="Place Image" />;
+}
+
+function getPlaceTypeIconDisplay(placeType) {
+	return (
+		<div className="SubDashboard-place-icon-container SubDashboard-place-icon">
+			{<i class={`${PLACE_TYPE_ICONS[placeType]}`} />}
+		</div>
+	);
 }
 
 function Place({ item, placeType, setInfoWindowPlace, idx }) {
@@ -47,7 +61,9 @@ function Place({ item, placeType, setInfoWindowPlace, idx }) {
 	const ratingsCountDisplay = user_ratings_total || 0;
 	const ratingDisplay = `${(rating || 0).toFixed(1)}`;
 
-	const imageUrlDisplay = getImageUrl(imageUrl, placeType, idx);
+	const imageOrIconDisplay = imageUrl
+		? getImageUrl(imageUrl, placeType, idx)
+		: getPlaceTypeIconDisplay(placeType);
 
 	const handleClick = () => {
 		setInfoWindowPlace(item);
@@ -56,9 +72,7 @@ function Place({ item, placeType, setInfoWindowPlace, idx }) {
 	return (
 		// <a href={url} target="_blank" className="SubDashboard-place">
 		<div className="SubDashboard-place" onClick={handleClick}>
-			<div className="SubDashboard-place-image-container">
-				{imageUrlDisplay && <img src={imageUrlDisplay} alt="place-image" />}
-			</div>
+			<div className="SubDashboard-place-image-container">{imageOrIconDisplay}</div>
 			<div className="SubDashboard-place-info">
 				<div className="SubDashboard-place-info-heading">{name}</div>
 				<div>
