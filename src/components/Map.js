@@ -257,6 +257,7 @@ function Map({
 				zoom={12}
 				onLoad={onMapLoad}
 				options={mapOptions}
+				onClick={handleCloseInfoWindow}
 			>
 				{selectedAddress && (
 					<Fragment>
