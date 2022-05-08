@@ -19,6 +19,9 @@
 	text-decoration: none;
 
 	transition: background-color 0.2s, color 0.2s;
+}
+
+.SubDashboard-place-dashboard {
 	cursor: pointer;
 }
 
@@ -68,4 +71,12 @@
 .SubDashboard-place-info-stars i.star-full,
 .SubDashboard-place-info-stars i.star-half {
 	color: gold;
+}
+
+span.Place-link-name {
+	text-decoration: none;
+}
+
+span.Place-link-name:hover {
+	text-decoration: underline;
 }

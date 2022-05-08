@@ -15,6 +15,19 @@ function Place({ item, placeType, displayType, setInfoWindowPlace, idxForFakeIma
 		? getImageUrl(imageUrl, placeType, idxForFakeImage)
 		: getPlaceTypeIconDisplay(placeType);
 
+	const nameDisplay =
+		displayType === 'InfoWindow' ? (
+			<a href={url} target="_blank" className="Place-link SubDashboard-place-info-heading">
+				<span className="Place-link-name">{name}</span>
+				<span>
+					{'   '}
+					<i className="fa-solid fa-link" />
+				</span>
+			</a>
+		) : (
+			<div className="SubDashboard-place-info-heading">{name}</div>
+		);
+
 	const handleClick = () => {
 		if (displayType !== 'InfoWindow')
 			setInfoWindowPlace({ ...item, placeType, idxForFakeImage });
@@ -29,7 +42,7 @@ function Place({ item, placeType, displayType, setInfoWindowPlace, idxForFakeIma
 		>
 			<div className="SubDashboard-place-image-container">{imageOrIconDisplay}</div>
 			<div className="SubDashboard-place-info">
-				<div className="SubDashboard-place-info-heading">{name}</div>
+				{nameDisplay}
 				<div>
 					<span>{ratingDisplay} </span>
 					<span className="SubDashboard-place-info-stars">

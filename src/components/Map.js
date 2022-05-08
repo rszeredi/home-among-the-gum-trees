@@ -245,16 +245,16 @@ function Map({
 							{/* <a href={infoWindowPlace.url} target="_blank">
 								<h3>{infoWindowPlace.name}</h3>
 							</a> */}
-							<a href={infoWindowPlace.url} target="_blank">
-								<Place
-									key={infoWindowPlace.place_id}
-									item={infoWindowPlace}
-									displayType="InfoWindow"
-									placeType={infoWindowPlace.placeType}
-									setInfoWindowPlace={setInfoWindowPlace}
-									idxForFakeImage={infoWindowPlace.idxForFakeImage}
-								/>
-							</a>
+							{/* <a href={infoWindowPlace.url} target="_blank"> */}
+							<Place
+								key={infoWindowPlace.place_id}
+								item={infoWindowPlace}
+								displayType="InfoWindow"
+								placeType={infoWindowPlace.placeType}
+								setInfoWindowPlace={setInfoWindowPlace}
+								idxForFakeImage={infoWindowPlace.idxForFakeImage}
+							/>
+							{/* </a> */}
 						</div>
 					</InfoWindow>
 				)}
