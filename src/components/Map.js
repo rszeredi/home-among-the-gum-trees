@@ -42,7 +42,6 @@ function Map({
 		width: '100%',
 		height: verticalLayout ? '50vh' : '100vh'
 	};
-	console.log('verticalLayout', verticalLayout);
 
 	const onMapLoad = useCallback((map) => {
 		// initialize places service
@@ -184,14 +183,60 @@ function Map({
 		mapRef.current.setZoom(14);
 	};
 
-	const goToRealEstatePage = () => {
-		const realEstateUrl = create_property_url(selectedAddress.addressComponents);
-		if (realEstateUrl) {
-			console.log('will goToRealEstatePage:', realEstateUrl);
-			window.open(realEstateUrl, '_blank', 'noreferrer');
+	const goToUrlNoReferrer = (url) => {
+		console.log('will go to url:', url);
+		window.open(url, '_blank', 'noreferrer');
+	};
+
+	const getInfoWindow = () => {
+		if (infoWindowPlace.placeType === 'selectedAddress') {
+			const realEstateUrl = create_property_url(selectedAddress.addressComponents);
+			if (!realEstateUrl) console.log('Cannot construct URL');
+			const goToRealEstateUrl = () => goToUrlNoReferrer(realEstateUrl);
+
+			const position = { lat: infoWindowPlace.lat, lng: infoWindowPlace.lng };
+
+			return (
+				<InfoWindow
+					// onLoad={(infoBox) => console.log('infoBox', infoBox)}
+					position={position}
+					onCloseClick={handleCloseInfoWindow}
+				>
+					<div
+						className="Map-infowindow-selectedAddress-link"
+						onClick={goToRealEstateUrl}
+					>
+						<img src="/favicon.ico" />
+						<span className="Map-infowindow-selectedAddress-name">
+							{infoWindowPlace.address}
+						</span>
+						<span>
+							{'   '}
+							<i className="fa-solid fa-link" />
+						</span>
+					</div>
+				</InfoWindow>
+			);
 		} else {
-			console.log('Cannot construct URL');
+			return (
+				<InfoWindow position={infoWindowPlace.coords} onCloseClick={handleCloseInfoWindow}>
+					<div className="Map-infowindow">
+						<Place
+							key={infoWindowPlace.place_id}
+							item={infoWindowPlace}
+							displayType="InfoWindow"
+							placeType={infoWindowPlace.placeType}
+							setInfoWindowPlace={setInfoWindowPlace}
+							idxForFakeImage={infoWindowPlace.idxForFakeImage}
+						/>
+					</div>
+				</InfoWindow>
+			);
 		}
+	};
+
+	const setInfoWindowAsAddress = () => {
+		setInfoWindowPlace({ ...selectedAddress, placeType: 'selectedAddress' });
 	};
 
 	return (
@@ -230,34 +275,12 @@ function Map({
 								anchor: new window.google.maps.Point(17, 46),
 								scaledSize: new window.google.maps.Size(37, 37)
 							}}
-							onClick={goToRealEstatePage}
+							onClick={setInfoWindowAsAddress}
 						/>
 					</Fragment>
 				)}
 				{markers}
-				{infoWindowPlace && (
-					<InfoWindow
-						onLoad={(infoBox) => console.log('infoBox', infoBox)}
-						position={infoWindowPlace.coords}
-						onCloseClick={handleCloseInfoWindow}
-					>
-						<div className="Map-infowindow">
-							{/* <a href={infoWindowPlace.url} target="_blank">
-								<h3>{infoWindowPlace.name}</h3>
-							</a> */}
-							{/* <a href={infoWindowPlace.url} target="_blank"> */}
-							<Place
-								key={infoWindowPlace.place_id}
-								item={infoWindowPlace}
-								displayType="InfoWindow"
-								placeType={infoWindowPlace.placeType}
-								setInfoWindowPlace={setInfoWindowPlace}
-								idxForFakeImage={infoWindowPlace.idxForFakeImage}
-							/>
-							{/* </a> */}
-						</div>
-					</InfoWindow>
-				)}
+				{infoWindowPlace && getInfoWindow()}
 				<SearchBar
 					setSelectedAddress={setSelectedAddress}
 					selectedAddress={selectedAddress}
