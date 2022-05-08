@@ -126,6 +126,16 @@ function Map({
 						key={`${place_id}`}
 						icon={markerImage}
 						onClick={handleMarkerClick}
+						// label={{
+						// 	// text: '1km',
+						// 	text: '\ue530',
+						// 	fontFamily: 'Material Icons',
+						// 	color: 'white',
+						// 	fontSize: '18px',
+						// 	fontWeight: 'bold',
+						// 	backgroundColor: 'blue',
+						// 	shape: ''
+						// }}
 					/>
 				);
 				existingMarkers.add(place_id);
@@ -155,7 +165,8 @@ function Map({
 		fillOpacity: 0.15,
 		fillColor: 'lightgreen',
 		strokeColor: 'lightgreen',
-		strokeWeight: 1
+		strokeWeight: 1,
+		cursor: 'grab'
 	};
 
 	return (
@@ -171,8 +182,24 @@ function Map({
 					<Fragment>
 						<Circle center={selectedAddress} radius={1000} options={circleOptions} />
 						<Marker
+							position={{
+								lat: selectedAddress.lat + 0.006,
+								lng: selectedAddress.lng + 0.006
+							}}
+							label={{
+								text: '1km',
+								color: 'darkgreen',
+								fontSize: '18px',
+								fontWeight: 'bold'
+							}}
+							icon={{
+								url: '',
+								anchor: new window.google.maps.Point(17, 46),
+								scaledSize: new window.google.maps.Size(37, 37)
+							}}
+						/>
+						<Marker
 							position={selectedAddress}
-							shape={shape}
 							icon={{
 								url: '/favicon.ico',
 								anchor: new window.google.maps.Point(17, 46),
