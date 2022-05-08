@@ -184,6 +184,7 @@ function Map({
 	};
 
 	const goToUrlNoReferrer = (url) => {
+		if (!url) return;
 		console.log('will go to url:', url);
 		window.open(url, '_blank', 'noreferrer');
 	};
@@ -203,17 +204,26 @@ function Map({
 					onCloseClick={handleCloseInfoWindow}
 				>
 					<div
-						className="Map-infowindow-selectedAddress-link"
+						className={
+							'Map-infowindow-selectedAddress-link ' + (!realEstateUrl ? '' : 'link')
+						}
 						onClick={goToRealEstateUrl}
 					>
 						<img src="/favicon.ico" />
-						<span className="Map-infowindow-selectedAddress-name">
+						<span
+							className={
+								'Map-infowindow-selectedAddress-name ' +
+								(!realEstateUrl ? '' : 'link')
+							}
+						>
 							{infoWindowPlace.address}
 						</span>
-						<span>
-							{'   '}
-							<i className="fa-solid fa-link" />
-						</span>
+						{realEstateUrl && (
+							<span>
+								{'   '}
+								<i className="fa-solid fa-link" />
+							</span>
+						)}
 					</div>
 				</InfoWindow>
 			);

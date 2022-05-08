@@ -40,6 +40,9 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 0.6rem;
+}
+
+.Map-infowindow-selectedAddress-link.link {
   cursor: pointer;
 }
 
@@ -58,7 +61,8 @@
   font-size: 1rem;
 }
 
-.Map-infowindow-selectedAddress-name:hover {
+.Map-infowindow-selectedAddress-name.link:hover {
+  cursor: pointer;
   text-decoration: underline;
 }
 /*# sourceMappingURL=Map.css.map */

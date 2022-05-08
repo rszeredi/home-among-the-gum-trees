@@ -30,7 +30,7 @@ function SearchBar({ setSelectedAddress, selectedAddress }) {
 		requestOptions: {
 			location: melbourneLatLng,
 			radius: 15000,
-			componentRestrictions: { country: 'AU' },
+			// componentRestrictions: { country: 'AU' },
 			strictBounds: true
 		}
 	});
