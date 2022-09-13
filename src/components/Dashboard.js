@@ -55,8 +55,13 @@ function Dashboard({
 					InputProps={{ inputProps: { min: 0.5, max: 8, step: 0.5 } }}
 					value={tempRadius}
 					onChange={handleRadiusChange}
+					label="Radius (km)"
 				/>
-				<Button type="submit" variant="outlined" color="secondary">
+				<Button
+					type="submit"
+					variant="outlined"
+					// color="secondary"
+				>
 					Submit
 				</Button>
 			</form>
