@@ -268,6 +268,7 @@ function Map({
 							center={selectedAddress}
 							radius={radiusInMetres}
 							options={circleOptions}
+							onClick={handleCloseInfoWindow}
 						/>
 						<Marker
 							position={{
