@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLoadScript } from '@react-google-maps/api';
 import Map from './Map';
 import Dashboard from './Dashboard';
+import constants from '../util/constants';
 
 import './MainApp.css';
 
@@ -15,6 +16,7 @@ function MainApp() {
 	});
 
 	const [ selectedAddress, setSelectedAddress ] = useState(null);
+	const [ radiusInMetres, setRadiusInMetres ] = useState(constants['DEFAULT_RADIUS_IN_METRES']);
 	const [ placesOfInterest, setPlacesOfInterest ] = useState({});
 	const [ infoWindowPlace, setInfoWindowPlace ] = useState(null);
 
@@ -28,6 +30,7 @@ function MainApp() {
 					setPlacesOfInterest={setPlacesOfInterest}
 					infoWindowPlace={infoWindowPlace}
 					setInfoWindowPlace={setInfoWindowPlace}
+					radiusInMetres={radiusInMetres}
 				/>
 			</div>
 			<div
@@ -40,6 +43,8 @@ function MainApp() {
 					selectedAddress={selectedAddress}
 					placesOfInterest={placesOfInterest}
 					setInfoWindowPlace={setInfoWindowPlace}
+					defaultRadiusInMetres={radiusInMetres}
+					setRadiusInMetres={setRadiusInMetres}
 				/>
 			</div>
 		</div>

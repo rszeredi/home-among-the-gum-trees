@@ -1,4 +1,5 @@
 const constants = {
+	DEFAULT_RADIUS_IN_METRES: 1000,
 	NUM_PLACES_PER_PLACE_TYPE: 3,
 	PLACE_TYPES: [
 		'restaurant',

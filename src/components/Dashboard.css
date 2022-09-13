@@ -1,36 +1,48 @@
 .Dashboard {
-  height: 100vh;
-  border-left: 1px solid lightgray;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+	height: 100vh;
+	border-left: 1px solid lightgray;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
 }
 
 .Dashboard-heading {
-  font-size: 1.8rem;
-  padding: 10px;
+	font-size: 1.8rem;
+	padding: 10px;
 }
 
 .Dashboard-container {
-  overflow-y: scroll;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+	overflow-y: scroll;
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 }
 
 @media (max-width: 1400px) {
-  .Dashboard-container {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-  }
+	.Dashboard-container {
+		-ms-grid-columns: 1fr;
+		grid-template-columns: 1fr;
+	}
 }
 
 .SubDashboard-heading {
-  text-transform: capitalize;
+	text-transform: capitalize;
 }
 /*# sourceMappingURL=Dashboard.css.map */
+
+.Dashboard-input-radius {
+	width: 100px;
+	/* height: 60px; */
+	padding: 0px !important;
+	margin: 0 10px 10px !important;
+	/* font-family: inherit; */
+}
+
+.Dashboard-input-radius input {
+	padding: 7px 10px;
+}

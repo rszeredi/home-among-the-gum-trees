@@ -30,7 +30,8 @@ function Map({
 	placesOfInterest,
 	setPlacesOfInterest,
 	infoWindowPlace,
-	setInfoWindowPlace
+	setInfoWindowPlace,
+	radiusInMetres
 }) {
 	const [ placesService, setPlacesService ] = useState(null);
 	const [ markers, setMarkers ] = useState([]);
@@ -69,8 +70,10 @@ function Map({
 
 			const requestBase = {
 				location: selectAddressLatLng,
-				radius: '1000'
+				radius: `${radiusInMetres}`
 			};
+
+			console.log('requestBase', requestBase);
 
 			const nearbySearchCallback = (results, status, next_page_token, placeType) => {
 				console.log('Searching placeType: ', placeType);
@@ -105,7 +108,7 @@ function Map({
 				}, 1000);
 			}
 		},
-		[ selectedAddress ]
+		[ selectedAddress, radiusInMetres ]
 	);
 
 	const getMarkers = () => {
@@ -261,14 +264,18 @@ function Map({
 			>
 				{selectedAddress && (
 					<Fragment>
-						<Circle center={selectedAddress} radius={1000} options={circleOptions} />
+						<Circle
+							center={selectedAddress}
+							radius={radiusInMetres}
+							options={circleOptions}
+						/>
 						<Marker
 							position={{
-								lat: selectedAddress.lat + 0.006,
-								lng: selectedAddress.lng + 0.006
+								lat: selectedAddress.lat + 0.006 * radiusInMetres / 1000,
+								lng: selectedAddress.lng + 0.006 * radiusInMetres / 1000
 							}}
 							label={{
-								text: '1km',
+								text: `${radiusInMetres / 1000}km`,
 								color: 'darkgreen',
 								fontSize: '18px',
 								fontWeight: 'bold'
